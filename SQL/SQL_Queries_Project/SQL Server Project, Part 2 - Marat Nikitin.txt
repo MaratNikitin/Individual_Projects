@@ -1,0 +1,149 @@
+/* This SQL script contains a list of SQL Server queries retrieving requested data
+* It's an individual project assignment, Part 2 
+* Author: Marat Nikitin
+* Date: January 13, 2022
+*/
+
+/*
+1.	For each product, display code, name, category name (not ID), list price, 
+discount percent and current price that is calculated by applying discount percent 
+to the list price. Give the calculated column title CurrentPrice and display it in 
+currency format.
+*/
+SELECT ProductCode, ProductName, CategoryName, ListPrice, DiscountPercent, 
+	[CurrentPrice] = FORMAT(ListPrice*(1-DiscountPercent/100), 'c')
+FROM Products JOIN Categories ON Products.CategoryID = Categories.CategoryID
+
+
+/*
+2.	Display a list of categories, with IDs and names, and how many products are in 
+each category, and what is the lowest and highest list price in each category. Make 
+sure that all columns have meaningful titles.
+*/
+SELECT Categories.CategoryID, CategoryName, 
+		COUNT(Products.ProductID) AS ProductsNr,
+		MAX(ListPrice) AS MaxListPrice,
+		MIN(ListPrice) AS MinListPrice
+FROM Products LEFT JOIN Categories ON Products.CategoryID = Categories.CategoryID
+GROUP BY Categories.CategoryID, CategoryName
+ORDER BY Categories.CategoryID
+
+
+/*
+3.	Display a list of customer IDs and names (concatenate first name with the last 
+name into one column CustomerName) and the phone associated with their billing address.
+Add two calculated columns that show area code and local phone for each phone number.
+*/
+SELECT Customers.CustomerID, CONCAT(FirstName, ' ', LastName) AS CustomerName,
+		Phone, LEFT(Phone, 3) AS AreaCode, RIGHT(Phone, 8) AS LocalPhone
+FROM Customers JOIN Addresses ON Customers.CustomerID = Addresses.CustomerID
+ORDER BY Customers.CustomerID
+
+
+/*
+4.	Display product codes and names with date added and calculated column that shows 
+how many months ago the product was added. Order by the calculated column in increasing 
+order. Display date added without time, and make sure all columns have meaningful titles.
+*/
+-- I had some fun with the date formatting 
+SELECT ProductCode, ProductName, 
+	CONCAT(DATENAME(month, DateAdded), FORMAT((DateAdded), ' dd, yyyy')) AS DateAdded,
+		DATEDIFF(month, DateAdded, GETDATE()) AS MonthsAgoAdded
+FROM Products
+ORDER BY MonthsAgoAdded
+
+/*
+5.	For each order, display OrderID, ProductTotal, ShipAmount, TaxAmount, and OrderTotal. 
+ProductTotal and OrderTotal are calculated columns. ProductTotal is calculated by summing 
+up (ItemPrice - DiscountAmount) * Quantity ever all items that belong to the order 
+(OrderItems table). OrderTotal is calculated by adding ProductTotal to  ShipAmount and 
+Tax Amount.
+*/
+-- main query
+SELECT  Orders.OrderID, 
+		SUM((ItemPrice - DiscountAmount)*Quantity) AS [ProductTotal, $],
+		SUM(ShipAmount) AS [ShipAmount, $], 
+		SUM(TaxAmount) AS [TaxAmount, $],
+		SUM((ItemPrice - DiscountAmount)*Quantity + ShipAmount + TaxAmount) AS [OrderTotal, $]
+FROM Orders JOIN OrderItems ON Orders.OrderID = OrderItems.OrderID
+GROUP BY Orders.OrderID
+
+-- query to check the results manually
+SELECT  Orders.OrderID, 
+			(ItemPrice - DiscountAmount)*Quantity AS ProductTotal,
+			ShipAmount, TaxAmount,
+			(ItemPrice - DiscountAmount)*Quantity + ShipAmount + TaxAmount AS OrderTotal
+FROM Orders JOIN OrderItems ON Orders.OrderID = OrderItems.OrderID
+
+/*
+6.	Write a query that displays all data of products that were never ordered. (This query 
+will return empty result set, because all products were ordered.)
+*/
+SELECT *
+FROM Products
+WHERE ProductID NOT IN (SELECT DISTINCT OrderItems.ProductID
+						FROM Products JOIN OrderItems 
+							ON Products.ProductID = OrderItems.ProductID)
+
+-- query using which we can see that indeed each product was ordered (it returns all 10 ProductIDs)
+SELECT DISTINCT OrderItems.ProductID
+FROM Products JOIN OrderItems ON Products.ProductID = OrderItems.ProductID
+ORDER BY OrderItems.ProductID -- ProductID is intentionally chosen from  the OrderItems table
+
+/*
+7.	Display Customer IDs, first names, and last names, together with how many orders each 
+customer has, but include only customers that have more than one order.
+*/
+SELECT Orders.CustomerID, FirstName, LastName, 
+		COUNT(Orders.CustomerID) AS NumberOfOrders
+FROM Customers JOIN Orders on Customers.CustomerID = Orders.CustomerID
+GROUP BY Orders.CustomerID, FirstName, LastName
+HAVING COUNT(Orders.CustomerID) > 1
+ORDER BY Orders.CustomerID
+
+/*
+8.	Display customers last names and first names together order IDs and dates. Include 
+customers who do not have orders. Display dates without time information. Order the report 
+alphabetically by last names and first names, and for the same customer by the order date 
+displaying  most recent order first
+*/
+SELECT LastName, FirstName, OrderID, 
+	CONCAT(DATENAME(month, OrderDate), FORMAT((OrderDate), ' dd, yyyy')) AS OrderDate
+FROM Customers LEFT JOIN Orders on Customers.CustomerID = Orders.CustomerID
+ORDER BY LastName, FirstName, OrderDate DESC
+
+select * from Customers
+/*
+9.	Display order ID and date of the most recent order, together with last name and first 
+name of the customer
+*/
+SELECT TOP 1 OrderID, 
+		CONCAT(DATENAME(month, OrderDate), FORMAT((OrderDate), ' dd, yyyy')) AS OrderDate, 
+		LastName, FirstName
+FROM Customers JOIN Orders on Customers.CustomerID = Orders.CustomerID
+ORDER BY OrderDate DESC
+
+/*
+10.	Display category IDs and product code, name and list price for a product that has the 
+highest list price in its category. Order by CategoryID.
+*/
+SELECT CategoryID, --ProductCode, ProductName, 
+		MAX(ListPrice) AS MaxPrice
+FROM Products AS Products_Main
+GROUP BY CategoryID --, ProductCode, ProductName  
+HAVING MAX(ListPrice) >= ANY(SELECT MAX(ListPrice) AS MaxListPrice
+									FROM Products 
+									GROUP BY CategoryID)
+ORDER BY CategoryID
+
+/*
+11.	Display customer IDs, first names and last names, together with order IDs for this 
+customer and products ordered (code, name, and quantity) for each order. (Hint: you will 
+need to join 4 tables.)
+*/
+SELECT Orders.CustomerID, FirstName, LastName, Orders.OrderID, 
+		ProductCode, ProductName, Quantity
+FROM Customers JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+		JOIN OrderItems ON Orders.OrderID = OrderItems.OrderID
+		JOIN Products ON OrderItems.ProductID = Products.ProductID
+ORDER BY OrderID
