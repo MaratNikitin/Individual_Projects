@@ -1,0 +1,12 @@
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\bin\Debug\net5.0\CustomerDataClassLibrary.deps.json
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\bin\Debug\net5.0\CustomerDataClassLibrary.dll
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\bin\Debug\net5.0\ref\CustomerDataClassLibrary.dll
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\bin\Debug\net5.0\CustomerDataClassLibrary.pdb
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\CustomerDataClassLibrary.csproj.AssemblyReference.cache
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\CustomerDataClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\CustomerDataClassLibrary.AssemblyInfoInputs.cache
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\CustomerDataClassLibrary.AssemblyInfo.cs
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\CustomerDataClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\CustomerDataClassLibrary.dll
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\ref\CustomerDataClassLibrary.dll
+C:\Users\14039\source\repos\MaratLabAssignment2\CustomerDataClassLibrary\obj\Debug\net5.0\CustomerDataClassLibrary.pdb
