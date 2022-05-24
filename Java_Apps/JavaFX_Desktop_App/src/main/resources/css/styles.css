@@ -1,0 +1,42 @@
+/*
+Day 6 Individual Home Assignment
+CMPP-264-A - Java Programming course, OOSD program,
+SAIT, March 2022.
+Author: Marat Nikitin.
+This app allows viewing a list of travel agents from the 'travelexperts' database
+    and updating their data.
+Form styles that could not be implemented with the Scene Builder were placed here.
+*/
+
+.titled-pane > .title
+{
+    -fx-background-color: #A0522D;
+    -fx-font-family: Arial;
+    -fx-font-size: 16;
+    -fx-text-fill: #ffffff;
+}
+
+.titled-pane > .title > .text
+{
+    -fx-fill: #ffffff;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #FAF0E6;
+    -fx-text-fill: #800000;
+    -fx-font-size: 14;
+    /*-fx-alignment: center; */
+}
+
+.combo-box .list-view {
+    -fx-background-color: #FAF0E6;
+    -fx-border-color: #800000;
+
+}
+
+/* hovering above the ComboBox items - it works */
+.combo-box .list-cell:hover {
+    -fx-background-color: #A0522D;
+    -fx-text-fill: #ffffff;
+}
