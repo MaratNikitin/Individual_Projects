@@ -1,0 +1,149 @@
+<!-- Marat Nikitin, CPRG 210 - Web Application Concepts, Day 8-13 Node.js - Daily Exercises, November 2021  -->
+
+<!DOCTYPE html>
+<html> 
+	<head>
+		 <title> 1 - Travel Experts </title> <!-- Text in a browser's tab indicator next to  an icon -->
+		 <script>
+			/*Loading an array of images for places of interest (displayed at the bottom of this page) */
+			var travelImages = ["media/havana.jpg", "media/dresden.jpg", "media/grandcanyon.jpg", 
+			"media/chichenitza.jpg", "media/eifeltower.jpg"];
+			
+			/* Loading an array of corresponding descriptions for the images in the travelImages array  */
+			var travelDescs = ["Havana, Cuba", "Dresden, Germany", "Grand Canyon, USA", 
+			"Chichen Itza, Mexico", "Paris, France"];
+			/* Loading an array of corresponding URLs for the images in the travelImages array  */
+			var travelURLs = [
+				"https://en.wikipedia.org/wiki/Havana", 
+				"https://en.wikipedia.org/wiki/Dresden",
+				"https://en.wikipedia.org/wiki/Grand_Canyon",
+				"https://en.wikipedia.org/wiki/Chichen_Itza",
+				"https://en.wikipedia.org/wiki/Paris"];
+				
+			var myWindow; /*Loading an array of corresponding URLs for the images in the travelImages array */
+			
+			/* This function allows displaying a proper selected place's image at "index.html" */
+			function showImage(index) {
+				document.getElementById("img1").src = travelImages[index];
+			}
+			
+			/* This function opens a Wikipedia page in a separate window just for 10 seconds. As a user, 
+			I would not be happy if a new tab or window closed automatically outside of my control, but 
+			that's exactly what was requested, so at least I left 10 seconds to allow loading a teaser page */
+			function openWindow(index) {
+				var win = open(travelURLs[index], "", "height=600, width=700", top=100, left=100);
+				var timer = setTimeout(function() {
+						win.close();
+					}, 10000); 
+			} 
+			
+			/* This part below is for creating a moving logo picture. I would not pur such an object on my 
+				website, but it's great for demonstrating skills and is a part of Day 7 assignment*/
+			var logoLeft = 0;
+			var forward = true;
+			
+			function moveLogo() {
+				// console.log("onload: " + logoLeft);
+				if (logoLeft >= window.innerWidth) {
+					forward = false;
+				}
+				if (logoLeft <=0)
+				{
+					forward = true;
+				}
+				if (forward) {
+					logoLeft +=3; /* Incrementing just 3px per iteration to allow smooth movement*/
+				}
+				else
+				{
+					logoLeft -=3; /* Incrementing just 3px per iteration to allow smooth movement*/
+				}
+				var logo = document.getElementById("img2");
+				logo.style.left = logoLeft + "px";
+			}
+		 </script>
+		 
+		 <!-- All the CSS styles are in the separate 'styles.css' file -->
+		<link rel="stylesheet" type="text/css" href="styles.css" />	
+		
+	</head>
+	
+	<body onload="setInterval(function(){moveLogo()}, 30)">
+		<!-- Moving logo image is set up automatically upon loading the webpage allowing incrementing the moving logo's 
+			position once every 30ms, which is 33 frames per second (fps) and exceeds the borderline 24fps -->
+		<header>
+			<div class="header">
+				<img src="media/logo2.png" width = "210" height = "154" /> <br>
+				<h1> Welcome to Travel Experts! </h1>
+			</div>
+		</header> <br>
+
+		<!-- A random greeting is to be inserted in the div element below using innerHTML option -->
+		<div id = "div5"> Random Greeting Text Will Be Here (see the script below): </div>
+		<script defer>
+			/* This script helps with generating random greetings on the main page. It's intentionally placed after 
+				the #div5 to avoid an error. The defer option doesn't work with an inline script  */
+			var GREETINGS = ["Good Morning!", "Hello!", "How's it going?", "What's up?", "Hi!", "How are you doing?", "What's going on?"];	
+			rand = Math.floor(Math.random() * GREETINGS.length);
+			document.getElementById("div5").innerHTML = GREETINGS[rand];
+		</script>
+
+		<!-- A navigation bar was not requested in the daily task descriptions, but most of the websites 
+		typically have one, so I thought it might be a good idea to make one.-->
+		<nav>
+				<ul>
+				<li> <a href="http://localhost:8000/contact"> Contact Us </a></li>
+				<li> <a href="http://localhost:8000/register"> Registration </a></li>
+				<li> <a href="http://localhost:8000/about"> About Us </a></li>
+				</ul>
+		</nav>
+		<br> <br> <br> <br> <br>
+		<div>
+			<img src="media/paradise1.jpg" title = "A beautiful beach paradise resort with white sand" 
+				width = 49.5% height = "auto" /> 
+			<img src="media/paradise2.jpg" title = "A beautiful tropical lagoon" width = 49.5% height = "auto" />
+		</div> <br>
+		
+		<!-- These two following text lines were added to practise CSS on them.-->
+		<div id = "div1"> PROVIDING GREAT EXPERIENCES IN </div> <br>
+		<div id = "div2"> Vacation &amp; Wedding Travel </div> <br> <br>
+		<div id = "div3"> Select Destination Suggestions (Hover mouse pointer above the destination 
+			names below or click to learn more):</div> <br>
+		
+		<!-- This article section below is the optional (challenge) part of the Day 5 Exercise,
+			which uses a single image tag and mouseover events -->
+		<article>
+			<img id="img1" src=""/>
+			<img id="img2" src="media/logo2.png"/>
+			<ol>
+				<script>
+					for (i=0; i<travelImages.length; i++) {
+					
+						document.write("<li onmouseover = 'showImage(" + i + ")' onclick = 'openWindow(" + i + ")'>" );
+						document.write(travelDescs[i]);
+						document.write("</li>");
+					}
+				</script>
+			</ol>
+		</article>	
+				
+		<p id="p2"> Click on the images below to proceed to the Contact Info or Registration pages </p>
+	<!-- These two following images are placed here because that's what was directly required in the Day 1 Assignment. 
+	A navigation bar with the duplicate functions was set up in the upper right corner of the page because that's where 
+	people usually look for links to other pages. -->
+		<div id="div4">
+			<a href = "contact">
+				<img src="media/contactus.jpg" title = "Click on this image to proceed to the contact information webpage" 
+					width = "360" height = "190"/> 
+			</a> 
+			<a href = "register">
+				<img src="media/register.jpg" title = "Click on this image to proceed to the Registration webpage" 
+				width = "360" height = "190"/>
+			</a>
+		</div> <br>
+		
+	<footer> &copy; Copyright 2021 by Travel Experts. All rights reserved. </footer>	
+	</body>
+	
+</html>
+

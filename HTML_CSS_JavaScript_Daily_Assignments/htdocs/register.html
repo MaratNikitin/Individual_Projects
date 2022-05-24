@@ -1,0 +1,210 @@
+<!-- Marat Nikitin, CPRG 210 - Web Application Concepts, Day 1-7 - Daily Exercises, November 2021 -->
+
+<!DOCTYPE html>
+<html> 
+	<head>
+		 <title> Register Here </title>
+		 <!-- All the CSS styles are in the separate 'styles.css' file -->
+		 <link rel="stylesheet" type="text/css" href="styles.css" />
+		 
+		<script>
+		<!-- This function is connected with the onclick listener on the submit button inside the registration form. -->
+		<!--> It finds and shows incomplete fields among the required ones of the form. -->
+			function myValidation(myForm) {
+				var message=""; /* Creating a message to be shown if the registration form is incomplete 
+					or data entered does not meet the requirements */
+				var reg = /^[a-z][0-9][a-z] ?\d[a-z]\d$/i; /* Simplified RegEx for checking postal code format.
+					Initially I tried to use required="required" HTML option, but it did not work well in
+					recognizing the adjacent space and question mark symbols of this RegEx. */
+				
+				/* Below is checking if any text fields of the registration forms are empty. The uppermost 
+						'First Name' field is omitted intentionally as HTML's required = "required" option 
+						is used there instead. */
+				if (myForm.lname.value == "") {
+					message += "Last Name must have a value <br>";
+				}
+				if (myForm.phone.value == "") {
+					message += "Phone Number must have a value <br>";
+				}
+				if (myForm.email.value == "") {
+					message += "E-mail must have a value <br>";
+				}
+				if (myForm.address.value == "") {
+					message += "Address must have a value <br>";
+				}
+				if (myForm.city.value == "") {
+					message += "City must have a value <br>";
+				}
+				if (myForm.postalcode.value == "") {
+					message += "Postal code must have a value <br>";
+				}
+				/* This following message fragment comes only if the postal code doesn't 
+					match (note "!") the format described above. */
+				if (!(reg.test(myForm.postalcode.value))) {
+					message += "Please enter the postal code in the 'A9A9A9' format<br>";
+				}
+				
+				if (message == "") {
+					document.getElementById("message").innerHTML = "";
+					return confirm("This form seems to be valid (there is a couple of extra checks ahead) do you want to submit it?");
+				}
+				
+				/* This cumulative "message" is displayed right above the form if something 
+					is missing or does not meet our data format requirements*/
+				else {
+					document.getElementById("message").innerHTML = message;
+					return false;
+				}
+			}
+		</script>
+		<!-- The following script helps giving relevant instructions for entering data 
+			in the registration form using onfocus listeners. Perhaps it's redundant here, 
+			but great for demonstrating skills. -->
+		<script>
+			/* Below we create an array of relevant messages helping to fill out fields 
+				of the registration form. */
+			var fieldInfo = ["Enter your first name here", "Please enter your last name there", 
+			"Enter your phone number there", "Please enter your e-mail there",
+			"Enter your street address there", "Please enter your city there",
+			"The postal code format is A0A0A0"];
+			
+			/* The function below helps to show relevant instructions when a particular 
+				form field has a cursor inside (onfocus). */
+			function showInfo(index) 
+			{
+				var para = document.getElementById("info");
+				para.innerHTML = fieldInfo[index];
+				para.style.visibility = "visible";
+			}
+			
+			/* The function below helps to hide instructions when a particular 
+				form field is not on focus anymore. */
+			function hideInfo()
+			{
+				var para = document.getElementById("info");
+				para.innerHTML = "";
+				para.style.visibility = "hidden";
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+		<div id = "p1">  Please enter your information in the form below: </div> <br>
+		
+		<!-- This following paragraph is here in case of missing information in the form. -->
+		<p id="message"></p>
+		
+		<!-- This following paragraph is here to give extra instructions onfocus. -->
+		<p id = "info"></p>
+		
+		<form method="post" action="bouncer.php">
+			<legend> Registration Form </legend>
+			
+			<label for="fname"> First Name (Required): </label>
+			<!-- The required = "required" HTML option is used here to demonstrate a simple alternative 
+					to using JS script. -->
+			<input type="text" name="fname" required = "required" onfocus="showInfo(0)" 
+				onblur="hideInfo()"></input> <br>
+			<!-- Warning a user that information in a particular field is required by saying it openly
+				in a label's description (it's the part that's guaranteed to be read by the user) might 
+				be a good idea helping to manage the user's expectations. -->
+			
+			<label for="lname"> Last Name (Required): </label>
+			<input type="text" name="lname" 
+				onfocus="showInfo(1)" onblur="hideInfo()"> </input> <br>
+			
+			<label for="phone"> Phone Number (Required): </label>
+			<input type="number" name="phone" onfocus="showInfo(2)" onblur="hideInfo()"></input> <br>
+			
+			<label for="email">E-mail (Required): </label>
+			<input type="email" name="email" onfocus="showInfo(3)" onblur="hideInfo()"/><br />
+			
+			<input type="checkbox" name="spam" value="yes" /> 
+			<label for="spam">I agree to receive promotional e-mails in the future </label> <br>
+			<!-- The 'input' part was placed ahead of the 'label' here to make it look better in the form. -->
+			
+			<label for="address"> Address (Required): </label>
+			<input type="text" name="address" onfocus="showInfo(4)" onblur="hideInfo()"></input> <br>
+			
+			<label for="city"> City (Required): </label>
+			<input type="text" name="city" onfocus="showInfo(5)" onblur="hideInfo()"></input> <br>
+			
+			<label for="postalcode"> Postal Code (Required, Format: A9A9A9): </label>
+			<!-- Showing postal code format in the label's description text part above might be redundant,
+				but I included it there as it is the part that is guaranteed to be read by a user -->
+			<input type="text" name="postalcode" onfocus="showInfo(6)" onblur="hideInfo()"> </input>
+			<!-- The HTML "pattern" was attempted to be used as a simple & reliable alternative 
+			to Java Script format validation, but for some reason, empty space symbol followed by a question 
+			mark in the RegEx used in JS script above isn't read properly in HTML's "pattern" feature  -->
+			
+			<label for="province"> Province (choose): </label> 
+			<select name="province"> <!-- Making a list of options to select from -->
+				<option value="AB"> Alberta </option>
+				<option value="BC"> British Columbia </option>
+				<option value="MB"> Manitoba </option>
+				<option value="NB"> New Brunswick </option>
+				<option value="NL"> Newfoundland &amp; Labrador </option>
+				<option value="NS"> Nova Scotia </option>
+				<option value="NT"> Northwest Territories </option>
+				<option value="NU"> Nunavut </option>
+				<option value="ON"> Ontario </option>
+				<option value="PE"> Prince Edward Island </option>
+				<option value="QC"> Quebec </option>
+				<option value="SK"> Saskatchewan </option>
+				<option value="YT"> Yukon </option>
+			
+			</select> <br>
+			
+			<label for="creditcardtype"> Credit Card Type: </label> 
+				<input type="radio" name="creditcardtype" value="visa"> Visa &nbsp; &nbsp;
+				<input type="radio" name="creditcardtype" value="mastercard"> Master Card &nbsp;&nbsp;
+				<input type="radio" name="creditcardtype" value="Amex"> American Express 
+			<br> <br>	
+			
+			<label for="destination"> Select your preferred destination: </label>
+			<select name="destination">
+				<option value="Canada">Canada</option>
+				<option value="Costa Rica">Costa Rica</option>
+				<option value="Cuba">Cuba</option>
+				<option value="Dominicana">Dominicana</option>
+				<option value="France">France</option>
+				<option value="Germany">Germany</option>
+				<option value="Jamaica">Jamaica</option>
+				<option value="India">India</option>
+				<option value="Indonesia">Indonesia</option>
+				<option value="Mexico">Mexico</option>
+				<option value="Thailand">Thailand</option>
+				<option value="Turkey">Turkey</option>
+				<option value="UK">United Kingdom</option>
+				<option value="USA">USA</option>
+				<option value="Other">Other</option>
+			</select><br />
+			
+			<!-- required = "required" HTML option is used for departure and return deates below
+				to demonstrate diverse tools -->
+			<label for="departure">Departure Date: </label>
+			<input type="date" name="departure" required = "required"/><br />
+			
+			<label for="return">Return Date: </label>
+			<input type="date" name="return" required = "required"/><br />
+			
+			<label for="story"> Additional Information (Comments): </label>
+			<textarea rows="6" cols="50" name="story">
+			 </textarea> <br>
+			
+			<!-- Confirmation of submission and reset features are added here: -->
+			<input type="submit" onclick="return myValidation(this.form)"> &nbsp;&nbsp; </input>
+			<input type="reset" onclick="return confirm('Do you really want to reset this form?');"> &nbsp; </input>
+			
+		</form>
+		
+		<br>
+		<!-- Below is the button for returning to the main page of the website. 
+		It was not requested, but I thought it might be a good extra feature to learn and practice new skills. -->
+		<button onclick="window.location.href='index.html'"> Return To The Main Page </button>; 
+		<br> <br>
+		<footer> &copy; Copyright 2021 by Travel Experts. All rights reserved. </footer>
+	</body>
+</html>
+

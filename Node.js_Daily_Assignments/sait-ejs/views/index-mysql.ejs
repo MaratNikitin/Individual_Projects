@@ -1,0 +1,45 @@
+<!-- Marat Nikitin, CPRG 210 - Web Application Concepts, Day 8-13 Node.js - Daily Exercises, November 2021 -->
+
+<!-- This file is used to display information about vacation packages as a separate customised page -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ejs - Packages </title>
+		 <!-- All the CSS styles are in the separate 'styles.css' file -->
+		<link rel="stylesheet" type="text/css" href="styles.css" />	
+	</head>
+	<body>
+		<div id = "div7"> The List Of Available Packages: </div> <br>
+		
+		
+		
+		<!-- A table with data from the travelexperts MySQL database is displayed: -->
+		<table>
+			<!-- A row with customised column header names is created and displayed: -->
+			<%let tableHeaders = ["Package ID", "Package Name", "Start Date", "End Date", "Description", 
+			"Package Price, CAD", "Agency Comission, CAD"];%> <!-- Created an array of table headers here -->
+				<tr>
+				<% for (let key in tableHeaders) {
+					if (tableHeaders.hasOwnProperty(key)) { %>
+						<th><%= tableHeaders[key] %></th>
+				<%	}
+				} %>
+				</tr>
+			<!-- Rows of information about packages is retrieved from the database and displayed dynamically: -->	
+			<% for (let customer of result) { %>
+				<tr>
+				<% for (let key in customer) {
+					if (customer.hasOwnProperty(key)) { %>
+						<td><%= customer[key] %></td>
+				<%	}
+				} %>
+				</tr>
+			<% } %>
+		</table>
+
+		<!-- A footer with this ID was used to target it with CSS and make sure that this footer is stuck at the page's bottom.  -->	
+		<footer id = "contactpagefooter"> &copy; Copyright 2021 by Travel Experts. All rights reserved. </footer>	
+		
+	</body>
+</html>

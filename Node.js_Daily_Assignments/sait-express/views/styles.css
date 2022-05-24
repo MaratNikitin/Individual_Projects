@@ -1,0 +1,372 @@
+/* Marat Nikitin, CPRG 210 - Web Application Concepts, Day 8-13 Node.js - Daily Exercises, November 2021  */
+
+/* These are the default parameters for all of the pages */
+* {background-color: cornsilk;
+	font-family: "Arial", sans-serif;
+/* Instead of a background image I used the same plain background color for each page - 
+	I thought it looks better this way*/
+}
+
+/* <h1> is used at the top of "index.html" and "contact.html" */
+h1 {
+	text-align: left;
+	color: maroon;
+	font-size: 40px;
+}
+
+/* "It's used at contact.html" for headers above the contact information*/
+h2 {
+	color: maroon;
+	border: 2px solid maroon;
+	/* Using borders was directly requested in the article 5 of the Day 3 assignment */
+	width: 18%;
+	margin-left: 10px;
+	border-radius: 6px;
+	/* 'Border-radius' is a nice feature helping with rounding corners of rectangular borders. 
+	The Programmer's Notepad doesn't recognize this valid option, although browsers do. */
+	padding-left: 20px;
+}
+
+/* Selecting & styling the navigation bar at the top of "index.html" - all that begins with "nav" */
+nav {
+	margin-top: 30px;
+}
+
+nav ul {
+	float: right;
+}
+
+nav ul li {
+	display: inline-block;
+	list-style: none;
+	border: 3px solid maroon;
+	border-radius: 6px;
+}
+
+nav ul li a {
+	color: maroon;
+	background-color: #ffffaa;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0px 30px;
+}
+
+nav ul li a:hover{
+	color: darkblue;
+	background-color: lightgreen;
+}
+
+nav ul li a:focus {background-color: green;}
+
+/* Selecting & styling the registration form at "register.html" */
+form {
+	background-color: #ffffcc;
+	width: 40%;
+	margin: 10px;
+	border: 2px solid maroon;
+	font-size: 20px;
+	border-radius: 6px;
+	padding: 10px;
+	margin-left: 30px;
+}
+/* Selecting & styling input fields of the registration form at "register.html" */
+input {
+	background-color: azure;
+	padding: 2px;
+}
+
+/*  Selecting & styling each label of the registration form*/
+label {
+	margin-top: 7px;
+	display: block;
+	background-color: #ffffcc;
+}
+
+/* Comments section of the registration form at "register.html" */
+textarea {
+	min-width:99%;
+	background-color: azure;
+	font-size: 18px;
+	text-align: left;
+	border-radius: 6px;
+}
+
+/* Selecting & styling the selecting fields of the registration form */	
+select {
+	background-color: azure;
+	font-size: 18px;
+}
+
+select option {
+	font-size: 18px;
+	background-color: azure;
+}
+
+/* It's for the header text inside the registration form */
+legend {
+	text-align: center;
+	background-color: #ffffcc;
+	font-weight: bold;
+	color: maroon;
+	font-size: 18px;
+}
+
+/* Making sure that dates in the registration form are pleasantly visible*/
+input[type="date"] {
+	font-size: 18px;
+}
+/* Styling checkbox display of the registration form */
+input[type="checkbox"] + label {
+	display: inline-block;
+}
+
+/* This helps to get radio selectors in one row */
+input[type="radio"] + label {
+	display: inline-block;
+} 
+
+/* Selecting & styling the "Submit" button of the registration form*/
+input[type="submit"] {
+	border-radius: 6px;
+	background-color: burlywood;
+	text-align: center;
+	font-size: 16px;
+	margin: 10px;
+	font-weight: bold;
+	padding: 2px 10px;
+}
+
+/* Indicating to a user that the "Submit" button inside the registration form 
+	is clickable at the moment */
+input[type="submit"]:hover {
+	background-color:lightgreen;
+	color: darkblue;
+}
+
+/* Indicating to a user that the "Submit" button inside the registration form was clicked */
+input[type="submit"]:focus {
+	background-color:green;
+}
+
+/* Selecting & styling the "Reset" button of the registration form*/
+input[type="reset"] {
+	border-radius: 6px;
+	background-color: burlywood;
+	text-align: center;
+	font-size: 16px;
+	margin: 10px;
+	font-weight: bold;
+	padding: 2px 20px;
+}
+
+/* Indicating to a user that the "Reset" button inside the registration form 
+	is clickable at the moment */
+input[type="reset"]:hover {
+	background-color:lightgreen;
+	color: darkblue;
+}
+
+/* Indicating to a user that the "Reset" button inside the registration form was clicked */
+input[type="reset"]:focus {
+	background-color:green;
+}
+
+/* p {color: black;} */
+/* This part is redundant and can be removed. I don't delete it yet to double check */
+
+/* All three footers by default. The contact.html page's footer is styled further below */
+footer {
+	text-align: center;
+	margin: 10px;
+	font-size: 16px;
+}
+
+/* It's for the list of places of interest with pictures on the 'index.html' page */	
+ul {
+	list-style-type:square;
+}
+
+/* It's for the text in the numbered list on index.html listing places 
+	of interest below the images block at the bottom of the page */
+ol {
+	color: maroon;
+	font-size: 18px;
+	list-style-position: inside;
+	text-align: center;
+}
+
+/* Highlighting the clickable ordered list item */
+ol > li:hover {
+	font-weight: bold;
+	color: maroon;
+	font-size: 28px;
+}
+
+/* Selecting & styling "Return To The Main Page" buttons */
+button {
+	background-color: burlywood;
+	text-align: center;
+	font-size: 16px;
+	margin-left: 30px;
+	font-weight: bold;
+	border-radius: 6px;
+	padding: 2px 10px;
+}
+
+/* "Return To The Main Page" buttons, showing that they are ready to be clicked */
+button:hover {
+	background-color:lightgreen; 
+	color: darkblue;
+}
+
+/* "Return To The Main Page" buttons, showing to a user that a button was clicked */
+button:focus {
+	background-color:green; 
+	color: blue;
+}
+
+/* It's for the Contact Information header at contact.html*/
+#p1 { 
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+	color: maroon;
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+}
+/* The Programmer's Notepad somehow doesn't recognize these two valid "text-decoration.." 
+	options above, although browsers do. */
+
+/* "Click on the images below..." text on the index page */
+#p2 { 
+	color: maroon;
+	font-weight: bold;
+	margin: 10px;
+}
+
+/* It's for the company's contact info at contact.html*/
+#p3 { 
+	text-align: left;
+	font-size: 22px;
+	color: maroon;
+	margin-left: 20px;
+}
+
+/* For the list of employees' contact information at contact.html */
+#ul1 { 
+	font-size: 20px;
+	color: maroon;
+}
+
+/* "PROVIDING GREAT EXPERIENCES IN" text fragment at index.html */
+#div1 {
+	color: firebrick;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+/* For the "Vacation & Wedding Travel" text fragment at index.html */
+#div2 {
+	color: indigo;
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	font-family: "Times New Roman";
+}
+
+/* For the "Select Destination Suggestions..." fragment at index.html */
+#div3 {
+	color: maroon;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* It's for the active images in the bottom left corner of the index.html page.
+	This way they become darker once a mouse pointer is over them. */
+#div4 img:hover { 
+	filter: brightness(80%);
+}
+
+/* For the random greetings at index.html */
+#div5 {
+	color: blueviolet;
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+/* It's for the messages popping up when some required field of the 
+	registration form is empty*/
+#message {
+	color: red;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* It's for onfocus instruction of filling up the registration form */
+#info {
+	position: absolute;
+	top: 230px;
+	left: 44%;
+	padding: 0px 20px;
+	font-size: 20px;
+	font-weight: bold;
+	color: maroon;
+	background-color: lightgreen;
+	border-radius: 6px; 
+}
+
+/* It's for the changing images at the top of the "index.html" page */
+#img1 {
+	position: relative;
+	width: 749px;
+	height: 468px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto
+}
+/* It's for the moving logo image on the top of the "index.html" page*/
+#img2 {
+	position: absolute;
+	top:245px;
+	left: 0px;
+	width: 75px;
+	height: 50px;
+}
+
+/* This helps to have a footer about copyright on the contact.html page 
+	be always stuck on the very bottom of the page*/
+#contactpagefooter {
+	padding: 0px;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	width: 100%; 
+}
+
+/* Selects & styles the logo at the top left corner of the "index.html" page */
+.header img {
+	float: left;
+	margin: 10px;
+	z-index: 1;
+}
+
+/* Selects & styles the "Welcome to Travel Experts!" header on "index.html" page */
+.header h1 {
+	position: relative;
+	top: 20px;
+	left: 25%;
+	z-index: 0;
+}
+
+
+
+
+
+
+
+
+
