@@ -1,0 +1,71 @@
+﻿<!--
+ * This web app creates a website of a fictional boat marina company allowing users to learn about the company,
+    see contact information, see available slips with the option of selecting them by dock, register a new user,
+    a registered user can login/logout, lease available slips and see own leased slips
+ * This is a body part of the /Slips page of the website where full list of all available slips is displayed
+ * Data is taken from the InlanMarina database (responsive page design is implemented throughout)
+ * Author: Marat Nikitin
+ * SAIT, OOSD course, CPRG-214 .NET Web Applications course
+ * When: February 2022
+-->
+
+@model IEnumerable<ASP_NET_Core_MVC_Lab1.Models.SlipDockLeaseViewModel>
+
+@{
+    ViewData["Title"] = "All Available Slips";
+}
+
+<h1 class="text-center text-primary">Full List of Available Slips: <i class="fas fa-ship ml-2"></i> </h1>
+
+<div class="container">
+    <table id="slipsTable" class="table table-bordered table-striped table-hover justify-content-center text-center">
+        <thead style="position:sticky; top:0" class="bg-white text-primary">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SlipID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Width)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Length)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DockName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WaterService)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ElectricalService)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SlipID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Width)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Length)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DockName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WaterService)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ElectricalService)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

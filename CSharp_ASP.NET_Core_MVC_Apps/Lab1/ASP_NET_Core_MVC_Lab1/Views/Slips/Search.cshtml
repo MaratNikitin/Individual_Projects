@@ -1,0 +1,49 @@
+﻿<!--
+ * This web app creates a website of a fictional boat marina company allowing users to learn about the company,
+    see contact information, see available slips with the option of selecting them by dock
+ * This is a body part of the /Slips/Search page of the website where a user chooses a dock by clicking a
+    corresponding button leading the user to a list of slips of the chosen dock (responsive page design is
+    implemented throughout)
+ * Author: Marat Nikitin
+ * SAIT, OOSD course, CPRG-214 .NET Web Applications course
+ * When: February 2022
+-->
+
+@model DbEntities_Class_Library.Dock
+
+@{
+    ViewData["Title"] = "Search Slips By Docks";
+}
+
+<h1 class="text-center mt-5 text-primary">Search Slips By Docks: <i class="far fa-hand-point-down ml-2"></i></h1>
+
+<div class="form-group form-inline justify-content-center my-5">
+    <div>
+        <a class="btn mx-3 my-2 shadow-none btn-success px-5" asp-action="SearchSlip" asp-route-id="1"> Dock A</a>
+    </div>
+    <div>
+        <a class="btn mx-3 my-2 shadow-none btn-success px-5" asp-action="SearchSlip" asp-route-id="2"> Dock B</a>
+    </div>
+    <div>
+        <a class="btn mx-3 my-2 shadow-none btn-success px-5" asp-action="SearchSlip" asp-route-id="3"> Dock C</a>
+    </div>
+</div>
+
+
+@*<form method="post" class="container">
+        <div class="form-group col-md-8 offset-md-2 my-5">
+            <label asp-for="ID" class="control-label">Filter By Dock:</label>
+            <select asp-items="@ViewBag.DockNames" asp-for="ID" class="form-control"> </select>
+        </div>
+
+        <div class="form-group form-inline justify-content-center">
+            <div>
+                <a class="btn mx-3 my-2 shadow-none btn-success" asp-action="SearchSlip" asp-route-id="1"> See Available Slips of the Chosen Dock</a>
+            </div>
+            <div>
+                <a class="btn mx-3 my-2 shadow-none btn-primary" asp-action="Index">Back to the Full List Of Available Slips</a>
+            </div>
+        </div>
+    </form>*@
+
+

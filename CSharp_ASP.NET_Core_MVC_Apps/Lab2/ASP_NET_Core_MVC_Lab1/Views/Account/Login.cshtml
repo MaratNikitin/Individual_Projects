@@ -1,0 +1,42 @@
+﻿<!--
+ * This web app creates a website of a fictional boat marina company allowing users to learn about the company,
+    see contact information, see available slips with the option of selecting them by dock, register a new user,
+    a registered user can login/logout, lease available slips and see own leased slips
+ * This is a view responsible for generating the user login page
+ * Author: Marat Nikitin
+ * SAIT, OOSD course, CPRG-214 .NET Web Applications course
+ * When: February 2022
+-->
+
+@model DbEntities_Class_Library.Customer
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- A feedback message to a user confirming successful registration (with green background) or wrong 
+    username-password combination (with red background) will be displayed here: -->
+@if (TempData["Message"] != null)
+{
+    <h4 class="@(TempData["IsError"] != null ? "bg-danger" : "bg-success") text-center text-light font-weight-bold p-2">
+        @TempData["Message"]
+    </h4>
+}
+
+<form asp-action="Login" class="container">
+    <h1 class="offset-sm-2 text-primary mb-5">Login</h1>
+    <div class="col-12">
+        <div class="form-group form-inline">
+            <div class="col-sm-2">Username: </div>
+            <div><input type="text" asp-for="Username" class="form-control px-3" /></div>
+        </div>
+        <div class="form-group form-inline">
+            <div class="col-sm-2">Password: </div>
+            <div><input type="password" asp-for="Password" class="form-control px-3" /></div>
+        </div>
+        <div class="form-group form-inline">
+            <div class="col-sm-2 offset-sm-2">
+                <input type="submit" value="Login" class="btn btn-primary px-sm-4 mt-5 px-4" />
+            </div>
+        </div>
+    </div>
+</form>

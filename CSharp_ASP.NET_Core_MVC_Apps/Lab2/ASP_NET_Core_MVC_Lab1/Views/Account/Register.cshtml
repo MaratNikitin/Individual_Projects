@@ -1,0 +1,74 @@
+﻿<!--
+ * This web app creates a website of a fictional boat marina company allowing users to learn about the company,
+    see contact information, see available slips with the option of selecting them by dock, register a new user,
+    a registered user can login/logout, lease available slips and see own leased slips
+ * This is a view responsible for generating registration page for a new customer
+ * Author: Marat Nikitin
+ * SAIT, OOSD course, CPRG-214 .NET Web Applications course
+ * When: February 2022
+-->
+
+@model DbEntities_Class_Library.Customer
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container">
+    <h1 class="offset-sm-2">Register</h1>
+
+    <hr />
+    <div>
+        <div class="col-12">
+            <form asp-action="Register" method="post">
+                <div class="form-group form-inline">
+                    <label asp-for="FirstName" class="control-label col-md-2 justify-content-start"></label>
+                    <input asp-for="FirstName" class="form-control col-md-4" />
+                    <span asp-validation-for="FirstName" class="text-danger col-md-6"></span>
+                </div>
+                <div class="form-group form-inline">
+                    <label asp-for="LastName" class="control-label col-md-2 justify-content-start"></label>
+                    <input asp-for="LastName" class="form-control col-md-4" />
+                    <span asp-validation-for="LastName" class="text-danger col-md-6"></span>
+                </div>
+                <div class="form-group form-inline">
+                    <label asp-for="Phone" class="control-label col-md-2 justify-content-start"></label>
+                    <input asp-for="Phone" class="form-control col-md-4" />
+                    <span asp-validation-for="Phone" class="text-danger col-md-6"></span>
+                </div>
+                <div class="form-group form-inline">
+                    <label asp-for="City" class="control-label col-md-2 justify-content-start"></label>
+                    <input asp-for="City" class="form-control col-md-4" />
+                    <span asp-validation-for="City" class="text-danger col-md-6"></span>
+                </div>
+                <div class="form-group form-inline">
+                    <label asp-for="Username" class="control-label col-md-2 justify-content-start"></label>
+                    <input asp-for="Username" class="form-control col-md-4" />
+                    <span asp-validation-for="Username" class="text-danger col-md-6"></span>
+                </div>
+                <div class="form-group form-inline">
+                    <label asp-for="Password" class="control-label col-md-2 justify-content-start"></label>
+                    <input asp-for="Password" type="password" class="form-control col-md-4" />
+                    <span asp-validation-for="Password" class="text-danger col-md-6"></span>
+                </div>
+                <div class="form-group form-inline">
+                    <label asp-for="ConfirmPassword" class="control-label col-md-2 justify-content-start"></label>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control col-md-4" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger col-md-6"></span>
+                </div>
+                <div class="form-group form-inline offset-sm-2">
+                    <div>
+                        <input type="submit" value="Register" class="btn btn-primary ml-5 px-4 mt-4" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

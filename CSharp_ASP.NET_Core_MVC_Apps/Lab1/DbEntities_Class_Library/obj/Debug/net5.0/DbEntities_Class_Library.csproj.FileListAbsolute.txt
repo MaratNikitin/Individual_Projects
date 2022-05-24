@@ -1,0 +1,15 @@
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\bin\Debug\net5.0\DbEntities_Class_Library.deps.json
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\bin\Debug\net5.0\DbEntities_Class_Library.runtimeconfig.json
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\bin\Debug\net5.0\DbEntities_Class_Library.runtimeconfig.dev.json
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\bin\Debug\net5.0\DbEntities_Class_Library.dll
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\bin\Debug\net5.0\ref\DbEntities_Class_Library.dll
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\bin\Debug\net5.0\DbEntities_Class_Library.pdb
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.csproj.AssemblyReference.cache
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.AssemblyInfoInputs.cache
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.AssemblyInfo.cs
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.csproj.CoreCompileInputs.cache
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.dll
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\ref\DbEntities_Class_Library.dll
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.pdb
+C:\Users\14039\source\repos\ASP_NET_Core_MVC_Lab1\DbEntities_Class_Library\obj\Debug\net5.0\DbEntities_Class_Library.genruntimeconfig.cache

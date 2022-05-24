@@ -1,0 +1,50 @@
+﻿<!--
+ * This web app creates a website of a fictional boat marina company allowing users to learn about the company,
+    see contact information, see available slips with the option of selecting them by dock, register a new user,
+    a registered user can login/logout, lease available slips and see own leased slips
+ * This file generates a page where an authenticated user confirms leasing a selected slip, both displayed fields
+    are auto-filled and read-only, so a user can only confirm leasing a slip or return
+ * Author: Marat Nikitin
+ * SAIT, OOSD course, CPRG-214 .NET Web Applications course
+ * When: February 2022
+-->
+
+@model DbEntities_Class_Library.Lease
+
+@{
+    ViewData["Title"] = "Lease";
+}
+
+<div class="container">
+    <h1 class="text-center mt-4 text-primary">Lease</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Lease" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="SlipID" class="control-label">Slip ID</label>
+                    <input asp-for="SlipID" class="form-control" value="@ViewBag.SelectedSlipID" readonly="@(true)" />
+                    <span asp-validation-for="SlipID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustomerID" class="control-label"> Customer ID</label>
+                    <input asp-for="CustomerID" class="form-control" value="@ViewBag.CurrentCustomer" readonly="@(true)" />
+                    <span asp-validation-for="CustomerID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Confirm Booking This Lease" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-primary px-5 ml-2">Back to List</a>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
