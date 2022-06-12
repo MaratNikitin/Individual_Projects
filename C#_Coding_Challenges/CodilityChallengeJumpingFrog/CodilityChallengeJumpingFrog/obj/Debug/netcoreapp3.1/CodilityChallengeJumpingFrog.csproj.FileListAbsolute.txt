@@ -1,0 +1,14 @@
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\bin\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.exe
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\bin\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.deps.json
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\bin\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.runtimeconfig.json
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\bin\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.runtimeconfig.dev.json
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\bin\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.dll
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\bin\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.pdb
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.csproj.AssemblyReference.cache
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.AssemblyInfoInputs.cache
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.AssemblyInfo.cs
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.csproj.CoreCompileInputs.cache
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.dll
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.pdb
+C:\Users\marat\source\repos\CodilityChallengeJumpingFrog\CodilityChallengeJumpingFrog\obj\Debug\netcoreapp3.1\CodilityChallengeJumpingFrog.genruntimeconfig.cache
