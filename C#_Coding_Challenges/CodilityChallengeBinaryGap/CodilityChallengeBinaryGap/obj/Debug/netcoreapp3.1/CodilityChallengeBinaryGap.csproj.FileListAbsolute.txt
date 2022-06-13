@@ -1,0 +1,14 @@
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\bin\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.exe
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\bin\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.deps.json
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\bin\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.runtimeconfig.json
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\bin\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.runtimeconfig.dev.json
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\bin\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.dll
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\bin\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.pdb
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.csproj.AssemblyReference.cache
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.AssemblyInfoInputs.cache
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.AssemblyInfo.cs
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.csproj.CoreCompileInputs.cache
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.dll
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.pdb
+C:\Users\marat\source\repos\CodilityChallengeBinaryGap\CodilityChallengeBinaryGap\obj\Debug\netcoreapp3.1\CodilityChallengeBinaryGap.genruntimeconfig.cache
