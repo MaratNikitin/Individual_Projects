@@ -1,0 +1,14 @@
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\bin\Debug\netcoreapp3.1\CodilityCyclicRotation.exe
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\bin\Debug\netcoreapp3.1\CodilityCyclicRotation.deps.json
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\bin\Debug\netcoreapp3.1\CodilityCyclicRotation.runtimeconfig.json
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\bin\Debug\netcoreapp3.1\CodilityCyclicRotation.runtimeconfig.dev.json
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\bin\Debug\netcoreapp3.1\CodilityCyclicRotation.dll
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\bin\Debug\netcoreapp3.1\CodilityCyclicRotation.pdb
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.csproj.AssemblyReference.cache
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.AssemblyInfoInputs.cache
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.AssemblyInfo.cs
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.csproj.CoreCompileInputs.cache
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.dll
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.pdb
+C:\Users\marat\source\repos\CodilityCyclicRotation\CodilityCyclicRotation\obj\Debug\netcoreapp3.1\CodilityCyclicRotation.genruntimeconfig.cache
