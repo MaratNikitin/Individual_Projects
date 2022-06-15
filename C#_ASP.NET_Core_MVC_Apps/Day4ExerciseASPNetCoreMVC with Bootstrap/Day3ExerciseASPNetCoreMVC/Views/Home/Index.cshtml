@@ -1,0 +1,44 @@
+﻿@model PriceQuotationModel
+@{
+    ViewData["Title"] = "Price Quotation";
+}
+
+<div class="container-fluid">
+    <div class="jumbotron bg-success font-weight-bold text-light text-justify text-center mx-sm-3">
+        <h1 style="font-size:4rem"> <i class="fas fa-money-bill-alt"></i> Price Quotation </h1>
+    </div>
+</div>
+
+
+<form asp-action="Index" method="post">
+    @*<div asp-validation-summary="All" class="text-danger"> </div>*@
+    <div class="container-fluid">
+        <div class="form-group form-inline">                 
+            <div class="col-sm-3"><label asp-for="Subtotal" class="form-control-label justify-content-sm-start">Subtotal: </label></div>
+            <div class="col-sm-3"><input asp-for="Subtotal" class="form-control input-sm" type="number" placeholder="Enter a number" /></div>
+            <div class="col-sm-6"><span asp-validation-for="Subtotal" class="text-danger"></span></div>
+        </div>
+        <div class="form-group form-inline">
+            <div class="col-sm-3"><label asp-for="DiscountPct" class="form-control-label justify-content-sm-start">Discount percent: </label></div>
+            <div class="col-sm-3"><input asp-for="DiscountPct" class="form-control input-sm" type="number" id="discountPct" placeholder="Enter a number" /></div>
+            <div class="col-sm-6"><span asp-validation-for="DiscountPct" class="text-danger"></span></div>
+        </div>
+        <div class="form-group form-inline">
+            <div class="col-sm-3"><label asp-for="DiscountAmt" class="justify-content-sm-start">Discount amount: </label></div>
+            <div class="col-sm-4"> <input value="@ViewBag.DiscountAmount.ToString("C2")" style="border:0" readonly></div>
+            <div class="col-sm-5 justify-content-sm-start"></div>
+        </div>
+        <div class="form-group form-inline">
+            <div class="col-3"><label for="total" asp-for="Total" class="justify-content-sm-start">Total: </label></div>
+            <div class="col-md-4"><input value="@ViewBag.Total.ToString("C2")" style="border:0" readonly> </div>
+            <div class="col-5 justify-content-sm-start"></div>
+        </div>
+        <div class="form-group form-inline">
+            <div class="col-sm-6 justify-content-sm-start">
+                <button type="submit" class="btn btn-sm btn-success px-2">Calculate</button>
+                <a asp-action="Index" class="btn btn-sm btn-success px-4">Clear</a>
+            </div>
+        </div>
+    </div>
+</form>
+
