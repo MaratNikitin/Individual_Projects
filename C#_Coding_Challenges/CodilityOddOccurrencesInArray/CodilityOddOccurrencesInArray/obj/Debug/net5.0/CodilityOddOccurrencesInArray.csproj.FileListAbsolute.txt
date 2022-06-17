@@ -1,0 +1,16 @@
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\bin\Debug\net5.0\CodilityOddOccurrencesInArray.exe
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\bin\Debug\net5.0\CodilityOddOccurrencesInArray.deps.json
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\bin\Debug\net5.0\CodilityOddOccurrencesInArray.runtimeconfig.json
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\bin\Debug\net5.0\CodilityOddOccurrencesInArray.runtimeconfig.dev.json
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\bin\Debug\net5.0\CodilityOddOccurrencesInArray.dll
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\bin\Debug\net5.0\ref\CodilityOddOccurrencesInArray.dll
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\bin\Debug\net5.0\CodilityOddOccurrencesInArray.pdb
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.csproj.AssemblyReference.cache
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.AssemblyInfoInputs.cache
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.AssemblyInfo.cs
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.csproj.CoreCompileInputs.cache
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.dll
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\ref\CodilityOddOccurrencesInArray.dll
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.pdb
+C:\Users\marat\source\repos\CodilityOddOccurrencesInArray\CodilityOddOccurrencesInArray\obj\Debug\net5.0\CodilityOddOccurrencesInArray.genruntimeconfig.cache

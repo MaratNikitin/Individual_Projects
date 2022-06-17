@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CodilityOddOccurrencesInArray/1.0.0": {
+        "runtime": {
+          "CodilityOddOccurrencesInArray.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CodilityOddOccurrencesInArray/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
