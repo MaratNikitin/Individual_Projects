@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "MaratsChallengeTask2Fixed/1.0.0": {
+        "runtime": {
+          "MaratsChallengeTask2Fixed.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MaratsChallengeTask2Fixed/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

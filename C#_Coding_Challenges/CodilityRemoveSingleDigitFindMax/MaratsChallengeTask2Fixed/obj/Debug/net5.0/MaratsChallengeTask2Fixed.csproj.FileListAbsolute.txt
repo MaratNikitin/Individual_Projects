@@ -1,0 +1,16 @@
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\bin\Debug\net5.0\MaratsChallengeTask2Fixed.exe
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\bin\Debug\net5.0\MaratsChallengeTask2Fixed.deps.json
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\bin\Debug\net5.0\MaratsChallengeTask2Fixed.runtimeconfig.json
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\bin\Debug\net5.0\MaratsChallengeTask2Fixed.runtimeconfig.dev.json
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\bin\Debug\net5.0\MaratsChallengeTask2Fixed.dll
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\bin\Debug\net5.0\ref\MaratsChallengeTask2Fixed.dll
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\bin\Debug\net5.0\MaratsChallengeTask2Fixed.pdb
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.csproj.AssemblyReference.cache
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.AssemblyInfoInputs.cache
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.AssemblyInfo.cs
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.csproj.CoreCompileInputs.cache
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.dll
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\ref\MaratsChallengeTask2Fixed.dll
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.pdb
+C:\Users\marat\source\repos\MaratsChallengeTask2Fixed\MaratsChallengeTask2Fixed\obj\Debug\net5.0\MaratsChallengeTask2Fixed.genruntimeconfig.cache
