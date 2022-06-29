@@ -1,0 +1,82 @@
+﻿@* 
+  It's a simple .NET 6 Blazor Server application allowing to create a list of expenses.
+  It's a part of self-learning Blazor Server.
+  Author: Marat Nikitin
+  When: June 2022
+  This file creates the main page of the application.
+*@
+
+
+@page "/"
+@page "/budget"
+@using BudgetBookDemo.Data
+@inject BudgetBookService budgetBookService
+
+<h3>Budget</h3>
+
+<form>
+    <div class="row">
+        <div class="col">
+            <label class="control-label"> Description </label>
+            <input class="form-control" @bind="newEntry.Description"/>
+        </div>
+        <div class="col">
+            <label class="control-label"> Amount </label>
+            <input class="form-control" @bind="newEntry.Amount"/>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-primary" @onclick="@CreateEntry"> Add </button>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Description
+            </th>
+             <th>
+                 Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Entry entry in allEntries)
+        {
+            <tr>
+                <td> 
+                    @entry.Description
+                </td>
+                <td> 
+                    @entry.Amount
+                </td>
+            </tr>
+        }        
+    </tbody>
+</table>
+
+
+
+@code {
+    List<Entry> allEntries = new List<Entry>();
+
+    Entry newEntry = new Entry();
+
+    decimal totalAmount = 0m;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        allEntries = await budgetBookService.GetAllEntries();
+    }
+
+    protected async void CreateEntry()
+    {
+        await budgetBookService.AddEntry(newEntry);
+    }
+}
