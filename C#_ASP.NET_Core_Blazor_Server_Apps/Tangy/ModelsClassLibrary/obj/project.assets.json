@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marat\\source\\repos\\Tangy\\ModelsClassLibrary\\ModelsClassLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\ModelsClassLibrary\\ModelsClassLibrary.csproj",
       "projectName": "ModelsClassLibrary",
-      "projectPath": "C:\\Users\\marat\\source\\repos\\Tangy\\ModelsClassLibrary\\ModelsClassLibrary.csproj",
+      "projectPath": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\ModelsClassLibrary\\ModelsClassLibrary.csproj",
       "packagesPath": "C:\\Users\\marat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marat\\source\\repos\\Tangy\\ModelsClassLibrary\\obj\\",
+      "outputPath": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\ModelsClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marat\\AppData\\Roaming\\NuGet\\NuGet.Config",

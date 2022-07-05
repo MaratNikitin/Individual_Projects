@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qua5x2kS547Asx9IvFdrD4CbA7XLBH55vh4xLRtis+7fDUhivdEMu+I9oLPATAxdjJvlkR+5mL7gcs1Wb92WQw==",
+  "dgSpecHash": "UhWwYTf9zNG3xqxs5Qqzl/DQnKxOqekEgF+iYq85SlhVuyUYyLFVdVNjv5U2qiUqUtBWftk4osykw5ez4gb5TQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marat\\source\\repos\\Tangy\\TangyWebServer\\TangyWebServer.csproj",
+  "projectFilePath": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\TangyWebServer\\TangyWebServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
