@@ -1,0 +1,63 @@
+﻿@page "/learnblazor/demoproduct"
+@*@using ModelsClassLibrary.LearnBlazorModels;*@
+<h2 class="text-primary">Demo Product</h2>
+
+<div class="border p-2 mt-2" style="background-color:azure">
+    <div class="row">
+        @foreach(var prod in Products1)
+        {
+            <div class="bg-light border m-1 col-5">
+                <h4 class="text-secondary">Product - @prod.Id</h4> <br/> 
+                Name - @prod.Name <br/> 
+                Show Properties: 
+                <input type="checkbox" class="form-check-input" @bind-value="@prod.isActive" checked="@(prod.isActive? "checked" : null)"/><br/>
+                @if(prod.isActive)
+                {
+                    @foreach(var prodProp in prod.ProductProperties)
+                    {
+                        <p>@prodProp.Key - @prodProp.Value </p> 
+                    }
+                    <br/>
+                }
+                <input type="button" class="btn btn-danger" style="width:100px;" value="Delete"/>
+                <input type="button" class="btn btn-success" style="width:100px;" value="Delete"/>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    
+    List<DemoProduct> Products1 = new();
+
+    protected override void OnInitialized()
+    {
+        Products1.Add(new()
+        {
+            Id = 1,
+            Name = "Midnight Blaze",
+            isActive = false,
+            Price = 5.99,
+            ProductProperties = new()
+            {
+                new DemoProductProp {Id = 1, Key = "Flavour", Value = "Rose"},
+                new DemoProductProp {Id = 2, Key = "Size", Value = "20oz"},
+                new DemoProductProp {Id = 3, Key = "Colour", Value = "Purple"}
+            }
+        });
+
+        Products1.Add(new()
+        {
+            Id = 2,
+            Name = "Blossom Lily",
+            isActive = true,
+            Price = 9.99,
+            ProductProperties = new()
+            {
+                new DemoProductProp {Id = 1, Key = "Flavour", Value = "Lily"},
+                new DemoProductProp {Id = 2, Key = "Size", Value = "18oz"},
+                new DemoProductProp {Id = 3, Key = "Colour", Value = "White"}
+            }
+        });
+    }
+}

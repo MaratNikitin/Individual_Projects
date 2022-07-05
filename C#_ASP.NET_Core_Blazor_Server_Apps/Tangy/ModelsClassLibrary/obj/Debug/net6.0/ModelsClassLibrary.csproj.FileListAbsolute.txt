@@ -1,0 +1,12 @@
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\bin\Debug\net6.0\ModelsClassLibrary.deps.json
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\bin\Debug\net6.0\ModelsClassLibrary.dll
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\bin\Debug\net6.0\ModelsClassLibrary.pdb
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ModelsClassLibrary.csproj.AssemblyReference.cache
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ModelsClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ModelsClassLibrary.AssemblyInfoInputs.cache
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ModelsClassLibrary.AssemblyInfo.cs
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ModelsClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ModelsClassLibrary.dll
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\refint\ModelsClassLibrary.dll
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ModelsClassLibrary.pdb
+C:\Users\marat\source\repos\Tangy\ModelsClassLibrary\obj\Debug\net6.0\ref\ModelsClassLibrary.dll
