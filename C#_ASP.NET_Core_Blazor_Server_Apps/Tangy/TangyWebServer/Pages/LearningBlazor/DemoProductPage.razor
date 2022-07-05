@@ -1,13 +1,14 @@
 ﻿@page "/learnblazor/demoproduct"
 @*@using ModelsClassLibrary.LearnBlazorModels;*@
 <h2 class="text-primary">Demo Product</h2>
-
+@*<p> Favourites Total: @SelectedFavouriteCount </p>*@
 <div class="border p-2 mt-2" style="background-color:azure">
     <div class="row">
         @foreach(var prod in Products1)
         {
             <div class="bg-light border m-1 col-5">
                 <h4 class="text-secondary">Product - @prod.Id</h4> <br/> 
+                <input type="checkbox" class="form-check-input" @onchange="(args)=>FavouriteCountUpdate(prod.isActive)"/> Add to Favourites  <br/> <br/> 
                 Name - @prod.Name <br/> 
                 Show Properties: 
                 <input type="checkbox" class="form-check-input" @bind-value="@prod.isActive" checked="@(prod.isActive? "checked" : null)"/><br/>
@@ -19,17 +20,19 @@
                     }
                     <br/>
                 }
-                <TangyWebServer.Pages.LearningBlazor.Components._EditDeleteButton>
+                <_EditDeleteButton IsActive="@prod.isActive">
                     @*Edit and Delete buttons come from the path specified in the tag's name*@
-                </TangyWebServer.Pages.LearningBlazor.Components._EditDeleteButton>
+                </_EditDeleteButton>
             </div>
         }
     </div>
 </div>
 
 @code {
-    
+
     List<DemoProduct> Products1 = new();
+    private int SelectedFavouriteCount { get; set; } = 0;
+    private EventCallback<bool> OnFavouriteSelection { get; set; }
 
     protected override void OnInitialized()
     {
@@ -60,5 +63,22 @@
                 new DemoProductProp {Id = 3, Key = "Colour", Value = "White"}
             }
         });
+    }
+
+    protected void FavouriteCountUpdate(bool isSelected)
+    {
+        if(isSelected)
+        {
+            SelectedFavouriteCount++;
+        }
+        else
+        {
+            SelectedFavouriteCount--;
+        }
+    }
+
+    private async Task FavouriteUpdated(ChangeEventArgs e)
+    {
+        await OnFavouriteSelection.InvokeAsync((bool)e.Value);
     }
 }
