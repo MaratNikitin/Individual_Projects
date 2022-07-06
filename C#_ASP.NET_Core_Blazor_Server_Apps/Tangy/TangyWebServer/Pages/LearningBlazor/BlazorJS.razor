@@ -7,13 +7,18 @@
 </div>
 <div>
      <button class="btn btn-success mb-3" style="width:200px" @onclick="ToastrSuccess"> Toastr Success </button> <br/>
-     <button class="btn btn-danger" style="width:200px" @onclick="ToastrFailure"> Toastr Failure </button>
+     <button class="btn btn-danger mb-3" style="width:200px" @onclick="ToastrFailure"> Toastr Failure </button> 
+</div>
+
+<div>
+     <button class="btn btn-success mb-3" style="width:200px" @onclick="SweetAlertSuccess"> Sweet Alert Success </button> <br/>
+     <button class="btn btn-danger mb-3" style="width:200px" @onclick="SweetAlertFailure"> Sweet Alert Failure </button> 
 </div>
 
 <div class="row">
     @if(ConfirmResult)
     {
-        <p class="text-success mt-3"> <b>Confirmation has been obtained!</b>  </p>
+        <p class="text-success"> <b>Confirmation has been obtained!</b>  </p>
     }
     else
     {
@@ -32,11 +37,23 @@
 
     private async Task ToastrSuccess()
     {
-        await _JsRuntime.InvokeVoidAsync("ShowToastr", "success", "Success");
+        // ToastrSuccess function comes from the IJSRuntimeExtension.cs file inside the 'Helper' folder
+        await _JsRuntime.ToastrSuccess("Operation Successful");
     }
 
     private async Task ToastrFailure()
     {
-        await _JsRuntime.InvokeVoidAsync("ShowToastr", "error", "Error");
+        // ToastrError function comes from the IJSRuntimeExtension.cs file inside the 'Helper' folder
+        await _JsRuntime.ToastrError("Operation Failed");
+    }
+
+    private async Task SweetAlertSuccess()
+    {
+        await _JsRuntime.InvokeVoidAsync("ShowSweetAlert", "success", "Mission Accomplished!");
+    }
+
+    private async Task SweetAlertFailure()
+    {
+        await _JsRuntime.InvokeVoidAsync("ShowSweetAlert", "error", "Task Failed!");
     }
 }
