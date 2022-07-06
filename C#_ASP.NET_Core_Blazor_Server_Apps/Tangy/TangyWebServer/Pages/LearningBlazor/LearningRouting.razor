@@ -1,0 +1,47 @@
+﻿@page "/learnblazor/learnRouting"
+@page "/learnRouting"
+@page "/learnblazor/learnRouting/{parameter1}"
+@page "/learnblazor/learnRouting/{parameter1}/{parameter2}"
+
+@inject NavigationManager _NavigationManager
+
+<h3>Learning Routing</h3>
+
+@*Parameter1 and Parameter2 are to be displayed only if they are provided (i.e. not null)*@
+@if(Parameter1 != null)
+{
+    <h4> Parameter 1 (from URL): @Parameter1 </h4>
+    @if(Parameter2 != null)
+    {
+        <h4> Parameter 2 (from URL): @Parameter2 </h4>
+    }
+}
+
+<a href="learnRouting?Param1=Tangy&Param2=Blazor" class="btn btn-primary"> Navigate to query parameters</a>
+<button class="btn btn-success" @onclick="LoadParameters"> Load parameters</button>
+<br />
+@if(Param1 != null || Param2 != null)
+{
+    <h3 class="mt-3"> Query String Parameters: </h3>
+    <h4> Param1: @Param1 </h4>
+    <h4> Param2: @Param2 </h4>
+}
+
+
+@code {
+    [Parameter]
+    public string Parameter1 { get; set; }
+    [Parameter]
+    public string Parameter2 { get; set; }
+
+    public string Param1 { get; set; }
+    public string Param2 { get; set; }
+
+    private void LoadParameters()
+    {
+        var absoluteUri = new Uri(_NavigationManager.Uri);
+        var queryParam = System.Web.HttpUtility.ParseQueryString(absoluteUri.Query);
+        Param1 = queryParam["Param1"];
+        Param2 = queryParam["Param2"];
+    }
+}

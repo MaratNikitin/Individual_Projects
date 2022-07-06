@@ -2,11 +2,13 @@
 
 <h3>Parent Child Relations </h3>
 
-<CascadingValue Value="@MessageForGrandChild">
-    <_ChildComponent OnButtonClick="ShowMessage" Title="This title is passed as parameter from Parent Component"> 
-        <ChildContent> Render fragment from the parent is here </ChildContent> 
-        <DangerChildContent> Danger content from Render Fragment is here </DangerChildContent>
-    </_ChildComponent>
+<CascadingValue Value="@MessageForGrandChild" Name="message">
+    <CascadingValue Value="@LuckyNumber" Name="luckyNumber">
+        <_ChildComponent OnButtonClick="ShowMessage" Title="This title is passed as parameter from Parent Component"> 
+            <ChildContent> Render fragment from the parent is here </ChildContent> 
+            <DangerChildContent> Danger content from Render Fragment is here </DangerChildContent>
+        </_ChildComponent>
+    </CascadingValue>
 </CascadingValue>
 
 <p><b> @messageText </b></p>
@@ -14,7 +16,8 @@
 
 @code {
 
-    public string MessageForGrandChild { get; set; } = "This message is from your grand parent (ParentComponent) - cascading";
+    public string MessageForGrandChild { get; set; } = "This message is from your grand parent (ParentComponent) passed as a cascading parameter";
+    public string LuckyNumber = "7";
 
     public Dictionary<string, object> InputAttributesFromParent { get; set; } = new Dictionary<string, object>()
     {

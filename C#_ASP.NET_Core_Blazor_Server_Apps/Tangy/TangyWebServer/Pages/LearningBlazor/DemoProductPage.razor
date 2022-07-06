@@ -8,7 +8,7 @@
         {
             <div class="bg-light border m-1 col-5">
                 <h4 class="text-secondary">Product - @prod.Id</h4> <br/> 
-                <input type="checkbox" class="form-check-input" @onchange="(args)=>FavouriteCountUpdate(prod.isActive)"/> Add to Favourites  <br/> <br/> 
+                @*<input type="checkbox" class="form-check-input" @onchange="(args)=>FavouriteCountUpdate(prod.isActive)"/> Add to Favourites  <br/> <br/>*@ 
                 Name - @prod.Name <br/> 
                 Show Properties: 
                 <input type="checkbox" class="form-check-input" @bind-value="@prod.isActive" checked="@(prod.isActive? "checked" : null)"/><br/>
