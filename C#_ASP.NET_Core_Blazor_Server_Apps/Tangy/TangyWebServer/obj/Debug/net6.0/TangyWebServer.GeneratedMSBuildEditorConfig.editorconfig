@@ -55,6 +55,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVhcm5pbmdCbGF6b3JcQ29tcG9uZW50c1xfR3JhbmRDaGlsZENvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/marat/OneDrive/Desktop/SAIT_Individual_Projects/C\#_ASP.NET_Core_Blazor_Server_Apps/Tangy/TangyWebServer/Pages/LearningBlazor/Components/_LifeCycleCild.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVhcm5pbmdCbGF6b3JcQ29tcG9uZW50c1xfTGlmZUN5Y2xlQ2lsZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marat/OneDrive/Desktop/SAIT_Individual_Projects/C\#_ASP.NET_Core_Blazor_Server_Apps/Tangy/TangyWebServer/Pages/LearningBlazor/DemoProductPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVhcm5pbmdCbGF6b3JcRGVtb1Byb2R1Y3RQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -65,6 +69,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/marat/OneDrive/Desktop/SAIT_Individual_Projects/C\#_ASP.NET_Core_Blazor_Server_Apps/Tangy/TangyWebServer/Pages/LearningBlazor/ParentComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVhcm5pbmdCbGF6b3JcUGFyZW50Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marat/OneDrive/Desktop/SAIT_Individual_Projects/C\#_ASP.NET_Core_Blazor_Server_Apps/Tangy/TangyWebServer/Pages/LifeCycle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlmZUN5Y2xlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marat/OneDrive/Desktop/SAIT_Individual_Projects/C\#_ASP.NET_Core_Blazor_Server_Apps/Tangy/TangyWebServer/Shared/SurveyPrompt.razor]

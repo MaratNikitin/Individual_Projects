@@ -1,4 +1,6 @@
-﻿<div>
+﻿@inject IJSRuntime _JsRuntime
+
+<div>
     <div class="alert alert-info">
         @Title
     </div>
@@ -44,4 +46,10 @@
 
     [Parameter]
     public EventCallback OnButtonClick { get; set; }
+
+    public async Task ToastrSuccess()
+    {
+        // ToastrSuccess function comes from the IJSRuntimeExtension.cs file inside the 'Helper' folder
+        await _JsRuntime.ToastrSuccess("Operation Successful");
+    }
 }
