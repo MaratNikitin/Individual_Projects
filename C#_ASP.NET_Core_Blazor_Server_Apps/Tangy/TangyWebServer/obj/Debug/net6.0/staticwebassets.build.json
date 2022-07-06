@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BVqFz8HHrejMCBSaFOlz4YGk4Er0T8+BKiHBJBvFzME=",
+  "Hash": "MWHF75Ve3qTXnUFg99LDwE6K0L6FcciK69jkaVrHcu8=",
   "Source": "TangyWebServer",
   "BasePath": "_content/TangyWebServer",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\TangyWebServer\\wwwroot\\js\\common.js",
+      "SourceId": "TangyWebServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\TangyWebServer\\wwwroot\\",
+      "BasePath": "_content/TangyWebServer",
+      "RelativePath": "js/common.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\common.js"
     }
   ]
 }
