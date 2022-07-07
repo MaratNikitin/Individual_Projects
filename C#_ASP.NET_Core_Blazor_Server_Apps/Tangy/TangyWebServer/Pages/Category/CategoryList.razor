@@ -2,7 +2,7 @@
 @inject ICategoryRepository _categoryRepository
 @inject IJSRuntime _jsRuntime
 
-<_DeleteConfirmation></_DeleteConfirmation>
+<_DeleteConfirmation ConfirmationChanged="ConfirmDeleteClicked"></_DeleteConfirmation>
 
 <div class="row mt-4">
     <div class="col-6">
@@ -29,8 +29,8 @@
                                 @objCat.Name
                             </td>
                             <td>
-                                <NavLink href="@($"category/edit/{objCat.Id }")" class="btn btn-primary"> Edit </NavLink>
-                                <button class="btn btn-danger" @onclick="()=>HandleDelete(objCat.Id)"> Delete </button>
+                                <NavLink href="@($"category/edit/{objCat.Id }")" class="btn btn-primary" style="width:100px"> Edit </NavLink>
+                                <button class="btn btn-danger" @onclick="()=>HandleDelete(objCat.Id)" style="width:100px"> Delete </button>
                             </td>
                         </tr>
                     }
@@ -74,5 +74,16 @@
     {
         DeleteCategoryId = id;
         _jsRuntime.InvokeVoidAsync("ShowDeleteConfirmationModal");
+    }
+
+    public async Task ConfirmDeleteClicked(bool isConfirmed)
+    {
+        if(isConfirmed && DeleteCategoryId != 0)
+        {
+            // deleting happens here:
+            _categoryRepository.Delete(DeleteCategoryId);
+            LoadCategories();
+            _jsRuntime.InvokeVoidAsync("HideDeleteConfirmationModal");
+        }
     }
 }

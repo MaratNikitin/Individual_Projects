@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Shared\_DeleteConfirmation.razor" />
+    <None Include="Pages\Category\_DeleteConfirmation.razor" />
   </ItemGroup>
 
 </Project>
