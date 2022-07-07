@@ -1,0 +1,14 @@
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.deps.json
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.runtimeconfig.json
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.csproj.AssemblyReference.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.AssemblyInfoInputs.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.AssemblyInfo.cs
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\refint\DataAccessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.genruntimeconfig.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\DataAccessClassLibrary\obj\Debug\net6.0\ref\DataAccessClassLibrary.dll

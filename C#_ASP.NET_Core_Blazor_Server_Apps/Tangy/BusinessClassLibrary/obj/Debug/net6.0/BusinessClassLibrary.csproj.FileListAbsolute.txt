@@ -1,0 +1,17 @@
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\bin\Debug\net6.0\BusinessClassLibrary.deps.json
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\bin\Debug\net6.0\BusinessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\bin\Debug\net6.0\BusinessClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.csproj.AssemblyReference.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.AssemblyInfoInputs.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.AssemblyInfo.cs
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\refint\BusinessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\ref\BusinessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\bin\Debug\net6.0\ModelsClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\bin\Debug\net6.0\ModelsClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\BusinessClassLibrary\obj\Debug\net6.0\BusinessClassLibrary.csproj.CopyComplete

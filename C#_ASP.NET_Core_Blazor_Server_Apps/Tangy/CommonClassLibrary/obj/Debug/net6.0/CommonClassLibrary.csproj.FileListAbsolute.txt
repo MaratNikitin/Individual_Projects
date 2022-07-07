@@ -1,0 +1,12 @@
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\bin\Debug\net6.0\CommonClassLibrary.deps.json
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\bin\Debug\net6.0\CommonClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\bin\Debug\net6.0\CommonClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\CommonClassLibrary.csproj.AssemblyReference.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\CommonClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\CommonClassLibrary.AssemblyInfoInputs.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\CommonClassLibrary.AssemblyInfo.cs
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\CommonClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\CommonClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\refint\CommonClassLibrary.dll
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\CommonClassLibrary.pdb
+C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_Server_Apps\Tangy\CommonClassLibrary\obj\Debug\net6.0\ref\CommonClassLibrary.dll
