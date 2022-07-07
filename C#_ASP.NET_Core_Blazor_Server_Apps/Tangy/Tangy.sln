@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TangyWebServer", "TangyWebS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelsClassLibrary", "ModelsClassLibrary\ModelsClassLibrary.csproj", "{701F9150-0877-4DA6-91DB-633EC61DEB14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessClassLibrary", "BusinessClassLibrary\BusinessClassLibrary.csproj", "{C592AC11-C722-42B7-B710-00B3AB9772D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessClassLibrary", "BusinessClassLibrary\BusinessClassLibrary.csproj", "{C592AC11-C722-42B7-B710-00B3AB9772D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonClassLibrary", "CommonClassLibrary\CommonClassLibrary.csproj", "{5F320817-0D52-4CEB-B0B4-DD25A6F9C40A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonClassLibrary", "CommonClassLibrary\CommonClassLibrary.csproj", "{5F320817-0D52-4CEB-B0B4-DD25A6F9C40A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessClassLibrary", "DataAccessClassLibrary\DataAccessClassLibrary.csproj", "{7607C958-AF7D-45C1-9E5C-AC0726B1EC75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessClassLibrary", "DataAccessClassLibrary\DataAccessClassLibrary.csproj", "{7607C958-AF7D-45C1-9E5C-AC0726B1EC75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
