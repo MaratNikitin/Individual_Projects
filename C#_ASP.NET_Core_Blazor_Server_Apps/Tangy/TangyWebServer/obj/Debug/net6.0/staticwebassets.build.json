@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MWHF75Ve3qTXnUFg99LDwE6K0L6FcciK69jkaVrHcu8=",
+  "Hash": "k1lHRRX8qxvJheUi5L7N9Atu+sTbrh/tJr3OnOMBT2E=",
   "Source": "TangyWebServer",
   "BasePath": "_content/TangyWebServer",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\TangyWebServer\\wwwroot\\images\\loading.gif",
+      "SourceId": "TangyWebServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\TangyWebServer\\wwwroot\\",
+      "BasePath": "_content/TangyWebServer",
+      "RelativePath": "images/loading.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\loading.gif"
     },
     {
       "Identity": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_Server_Apps\\Tangy\\TangyWebServer\\wwwroot\\js\\common.js",

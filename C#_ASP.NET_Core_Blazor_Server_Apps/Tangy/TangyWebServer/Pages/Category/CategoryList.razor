@@ -1,14 +1,78 @@
 ﻿@page "/category"
+@inject ICategoryRepository _categoryRepository
+@inject IJSRuntime _jsRuntime
+
+<_DeleteConfirmation></_DeleteConfirmation>
 
 <div class="row mt-4">
     <div class="col-6">
         <h4 class="card-title text-primary"> Category List </h4>
     </div>
-    <div class="col-2 offset-2">
+    <div class="col-2 offset-2 mb-3">
         <a href="category/create" class="btn btn-primary form-control"> Add New Category </a>
+    </div>
+    <div class="col-12">
+        @if(Categories.Any())
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Actions </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var objCat in Categories)
+                    {
+                        <tr>
+                            <td>
+                                @objCat.Name
+                            </td>
+                            <td>
+                                <NavLink href="@($"category/edit/{objCat.Id }")" class="btn btn-primary"> Edit </NavLink>
+                                <button class="btn btn-danger" @onclick="()=>HandleDelete(objCat.Id)"> Delete </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            if(IsLoading)
+            {
+                // display loading gif
+                <div class="text-center"> 
+                    <img src="/images/loading.gif" width="315px" height="318px"/>
+                </div>
+            }
+            else
+            {
+                // no records
+                <p> Sorry, no records were found. </p>
+            }
+        }
     </div>
 </div>
 
 @code {
+    private IEnumerable<CategoryDTO> Categories { get; set; } = new List<CategoryDTO>();
+    public bool IsLoading { get; set; } = true;
+    private int DeleteCategoryId { get; set; } = 0;
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Run(LoadCategories);
+    }
 
+    private void LoadCategories()
+    {
+        Categories = _categoryRepository.GetAll();
+        IsLoading = false;
+    }
+
+    private void HandleDelete(int id)
+    {
+        DeleteCategoryId = id;
+        _jsRuntime.InvokeVoidAsync("ShowDeleteConfirmationModal");
+    }
 }

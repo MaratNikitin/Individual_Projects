@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Shared\_DeleteConfirmation.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
       <PrivateAssets>all</PrivateAssets>
@@ -19,6 +23,18 @@
     <ProjectReference Include="..\BusinessClassLibrary\BusinessClassLibrary.csproj" />
     <ProjectReference Include="..\DataAccessClassLibrary\DataAccessClassLibrary.csproj" />
     <ProjectReference Include="..\ModelsClassLibrary\ModelsClassLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\_DeleteConfirmation.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Shared\_DeleteConfirmation.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shared\_DeleteConfirmation.razor" />
   </ItemGroup>
 
 </Project>
