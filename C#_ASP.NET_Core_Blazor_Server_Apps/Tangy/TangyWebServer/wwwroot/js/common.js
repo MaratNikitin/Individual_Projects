@@ -1,4 +1,13 @@
-﻿window.ShowToastr = (type, message) => {
+﻿/*
+ * This app is built based on Udemy's Blazor Learning course, part of the self-study.
+ *      It allows a full range of CRUD operations with a SQL Server DB and demonstrates Javascript integrations
+ *      into the Blazor Server projects.
+ * Author: Marat Nikitin.
+ * When: July 2022.
+ * All custom made Javascript methods used in this prject are place here.
+ */
+
+window.ShowToastr = (type, message) => {
     if (type === "success") {
         toastr.success(message, "Operation Successful", { timeOut: 5000 });
     }

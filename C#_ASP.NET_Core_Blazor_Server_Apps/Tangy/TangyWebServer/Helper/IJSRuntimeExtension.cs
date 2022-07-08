@@ -1,4 +1,13 @@
-﻿using Microsoft.JSInterop;
+﻿/*
+ * This app is built based on Udemy's Blazor Learning course, part of the self-study.
+ *      It allows a full range of CRUD operations with a SQL Server DB and demonstrates Javascript integrations
+ *      into the Blazor Server projects.
+ * Author: Marat Nikitin.
+ * When: July 2022.
+ * This file contains two methods helping with displaying and hiding JS toastrs.
+ */
+
+using Microsoft.JSInterop;
 
 namespace TangyWebServer.Helper
 {

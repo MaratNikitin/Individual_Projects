@@ -1,8 +1,15 @@
+/*
+ * This app is built based on Udemy's Blazor Learning course, part of the self-study.
+ *      It allows a full range of CRUD operations with a SQL Server DB and demonstrates Javascript integrations
+ *      into the Blazor Server projects.
+ * Author: Marat Nikitin.
+ * When: July 2022.
+ * This file contains essential dependency injections.
+ */
+
 using BusinessClassLibrary.Repository;
 using BusinessClassLibrary.Repository.IRepository;
 using DataAccessClassLibrary.Data;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 using TangyWebServer.Data;
 

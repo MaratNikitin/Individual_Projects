@@ -1,7 +1,16 @@
-﻿@if(IsActive)
+﻿@*
+ * This app is built based on Udemy's Blazor Learning course, part of the self-study.
+ *      It allows a full range of CRUD operations with a SQL Server DB and demonstrates Javascript integrations
+ *      into the Blazor Server projects.
+ * Author: Marat Nikitin.
+ * When: July 2022.
+ * This file is a partial component used for introducing unified buttons.
+*@
+
+@if(IsActive)
 {
+    <input type="button" class="btn btn-success" style="width:100px;" value="Edit"/>
     <input type="button" class="btn btn-danger" style="width:100px;" value="Delete"/>
-    <input type="button" class="btn btn-success" style="width:100px;" value="Delete"/>
 }
 
 @code {

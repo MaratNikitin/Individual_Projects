@@ -1,9 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+ * This app is built based on Udemy's Blazor Learning course, part of the self-study.
+ *      It allows a full range of CRUD operations with a SQL Server DB and demonstrates Javascript integrations
+ *      into the Blazor Server projects.
+ * Author: Marat Nikitin.
+ * When: July 2022.
+ * This file contains the CategoryDTO which is used for interactions with the DB hiding part of the DB data.
+ */
+
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ModelsClassLibrary
 {
