@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj",
+        "projectName": "FirstBlazorApp",
+        "projectPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj",
+        "packagesPath": "C:\\Users\\maratn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\maratn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.7, 6.0.7]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

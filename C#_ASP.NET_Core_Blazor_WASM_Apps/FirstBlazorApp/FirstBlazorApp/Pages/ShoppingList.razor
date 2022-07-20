@@ -1,0 +1,38 @@
+﻿@page "/shoppinglist"
+@*@using FirstBlazorApp.Data*@ @*this line is commented-out as it's included in _Imports.razor*@
+
+<h3>Shopping List</h3>
+<label> Grocery Name: </label>
+<input placeholder="Grocery Name" @bind="groceryName" class="form-control mb-3"/>
+<label> Grocery Price: </label>
+<input placeholder="Grocery Price" @bind="groceryPrice" class="form-control mb-3"/>
+<button @onclick="AddGrocery" class="btn btn-success mb-3"> Add Grocery </button>
+
+<ul>
+    @foreach(var grocery in groceries)
+    {
+        <li> @grocery.Name -- @grocery.Price </li>
+    }
+</ul>
+<h3> Total = @groceries.Sum(grocery => grocery.Price) </h3>
+
+@code {
+    private string groceryName;
+    private float groceryPrice;
+
+    private List<Grocery> groceries = new();
+
+    private void AddGrocery()
+    {
+        if(!string.IsNullOrWhiteSpace(groceryName) && (groceryPrice > 0))
+        {
+            groceries.Add(new Grocery
+                {
+                    Name = groceryName,
+                    Price = groceryPrice
+                });
+            groceryName = string.Empty;
+            groceryPrice = 0;
+        }
+    }
+}
