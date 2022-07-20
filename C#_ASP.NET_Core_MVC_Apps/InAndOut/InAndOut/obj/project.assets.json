@@ -7249,19 +7249,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marat\\.nuget\\packages\\": {}
+    "C:\\Users\\maratn\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\InAndOut\\InAndOut\\InAndOut.csproj",
+      "projectUniqueName": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\InAndOut\\InAndOut\\InAndOut.csproj",
       "projectName": "InAndOut",
-      "projectPath": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\InAndOut\\InAndOut\\InAndOut.csproj",
-      "packagesPath": "C:\\Users\\marat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\InAndOut\\InAndOut\\obj\\",
+      "projectPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\InAndOut\\InAndOut\\InAndOut.csproj",
+      "packagesPath": "C:\\Users\\maratn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\InAndOut\\InAndOut\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\marat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maratn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7320,6 +7320,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.17, 5.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
