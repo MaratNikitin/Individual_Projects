@@ -1,7 +1,15 @@
-﻿@page "/shoppinglist"
-@*@using FirstBlazorApp.Data*@ @*this line is commented-out as it's included in _Imports.razor*@
+﻿@*
+    This app was inspired by a Udemy's .NET6 course'.
+    Author: Marat Nikitin.
+    When: July 2022.
+    This is the Shopping List Blazor component allowing creating a shopping list using one-way
+        data binding.
+*@
 
-<h3>Shopping List</h3>
+@page "/shoppinglist"
+@*@using FirstBlazorApp.Data*@ @*this line is commented-out as it's included in _Imports.razor*@
+<PageTitle>@title</PageTitle>
+<h3 class="text-center">Shopping List</h3>
 <label> Grocery Name: </label>
 <input placeholder="Grocery Name" @bind="groceryName" class="form-control mb-3"/>
 <label> Grocery Price: </label>
@@ -14,10 +22,13 @@
         <li> @grocery.Name -- @grocery.Price </li>
     }
 </ul>
-<h3> Total = @groceries.Sum(grocery => grocery.Price) </h3>
+@*<h3> Total = @groceries.Sum(grocery => grocery.Price) </h3>*@
+<h3> Total = @sum </h3>
 
 @code {
-    private string groceryName;
+    private float sum = 0;
+    private string title = "Shopping List";
+    private string groceryName = "";
     private float groceryPrice;
 
     private List<Grocery> groceries = new();
@@ -31,6 +42,7 @@
                     Name = groceryName,
                     Price = groceryPrice
                 });
+            sum += groceryPrice;
             groceryName = string.Empty;
             groceryPrice = 0;
         }
