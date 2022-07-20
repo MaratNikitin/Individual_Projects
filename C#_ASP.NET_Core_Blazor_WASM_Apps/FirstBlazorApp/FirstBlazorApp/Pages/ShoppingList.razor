@@ -16,12 +16,18 @@
 <input placeholder="Grocery Price" @bind="groceryPrice" class="form-control mb-3"/>
 <button @onclick="AddGrocery" class="btn btn-success mb-3"> Add Grocery </button>
 
-<ul>
+<table class="table table-sm table-striped table-bordered">
+    <tr>
+        <th> Name </th>
+        <th> Price </th>
+        <th> </th>
+    </tr>
     @foreach(var grocery in groceries)
     {
-        <li> @grocery.Name -- @grocery.Price </li>
+        <Item GroceryItem="@grocery" OnGroceryPriceIncreased="OnGroceryPriceIncreased"/>
     }
-</ul>
+</table>
+
 @*<h3> Total = @groceries.Sum(grocery => grocery.Price) </h3>*@
 <h3> Total = @sum </h3>
 
@@ -42,9 +48,20 @@
                     Name = groceryName,
                     Price = groceryPrice
                 });
-            sum += groceryPrice;
+            //sum += groceryPrice;
             groceryName = string.Empty;
             groceryPrice = 0;
+            UpdateTotalAmount();
         }
+    }
+
+    public void UpdateTotalAmount()
+    {
+        sum = groceries.Sum(x => x.Price);
+    }
+
+    public void OnGroceryPriceIncreased()
+    {
+        UpdateTotalAmount();
     }
 }
