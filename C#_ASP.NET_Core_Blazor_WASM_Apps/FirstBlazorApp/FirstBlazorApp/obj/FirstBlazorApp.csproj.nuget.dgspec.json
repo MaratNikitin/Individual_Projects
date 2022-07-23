@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj": {}
+    "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj": {
+    "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj",
+        "projectUniqueName": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj",
         "projectName": "FirstBlazorApp",
-        "projectPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj",
-        "packagesPath": "C:\\Users\\maratn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\obj\\",
+        "projectPath": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\FirstBlazorApp.csproj",
+        "packagesPath": "C:\\Users\\marat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marat\\OneDrive\\Desktop\\SAIT_Individual_Projects\\C#_ASP.NET_Core_Blazor_WASM_Apps\\FirstBlazorApp\\FirstBlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maratn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\marat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
