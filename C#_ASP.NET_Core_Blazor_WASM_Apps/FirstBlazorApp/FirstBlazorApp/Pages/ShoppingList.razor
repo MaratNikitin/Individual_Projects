@@ -7,6 +7,8 @@
 *@
 
 @page "/shoppinglist"
+@layout ShoppingListLayout
+
 @*@using FirstBlazorApp.Data*@ @*this line is commented-out as it's included in _Imports.razor*@
 <PageTitle>@title</PageTitle>
 <h3 class="text-center">Shopping List</h3>
@@ -35,23 +37,27 @@
 <input placeholder="Grocery Price" @bind="groceryPrice" class="form-control mb-3"/>
 <button @onclick="AddGrocery" class="btn btn-success mb-3"> Add Grocery </button>*@
 
-<table class="table table-sm table-striped table-bordered">
-    <tr>
-        <th> Name </th>
-        <th> Price </th>
-        <th> </th>
-    </tr>
-    @foreach(var grocery in groceries)
-    {
-        <Item GroceryItem="@grocery" OnGroceryPriceIncreased="OnGroceryPriceIncreased"/>
-    }
-</table>
+@if(groceries.Count != 0)
+{
+    <table class="table table-sm table-striped table-bordered">
+        <tr>
+            <th> Name </th>
+            <th> Price </th>
+            <th> </th>
+        </tr>
+        @foreach(var grocery in groceries)
+        {
+            <Item GroceryItem="@grocery" OnGroceryPriceIncreased="OnGroceryPriceIncreased"/>
+        }
+    </table>
+}
+
 
 @*<h3> Total = @groceries.Sum(grocery => grocery.Price) </h3>*@
 <h3> Total = @sum </h3>
 
 @code {
-    private float sum = 0;
+    private float sum;
     private string title = "Shopping List";
     private string groceryName = "";
     private float groceryPrice;
