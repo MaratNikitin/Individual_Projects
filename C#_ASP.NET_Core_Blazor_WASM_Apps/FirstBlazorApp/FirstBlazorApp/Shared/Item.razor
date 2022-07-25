@@ -1,9 +1,16 @@
-﻿<tr>
+﻿@*
+    This app was inspired by a Udemy's .NET6 course'.
+    Author: Marat Nikitin.
+    When: July 2022.
+    This is the Item Blazor partial component allowing changing price of a grocery list item.
+*@
+
+<tr>
     <td> @GroceryItem.Name</td>
     <td> @GroceryItem.Price</td>
     <td>
         <button class="btn-sm float-right btn-outline-primary my-1" @onclick="AddPrice"> 
-            + Add 100 
+            + Add $1 
         </button>
     </td>
 </tr>
@@ -17,7 +24,7 @@
 
     private async Task AddPrice()
     {
-        GroceryItem.Price += 100;
+        GroceryItem.Price += 1;
         await OnGroceryPriceIncreased.InvokeAsync();
     }
 }

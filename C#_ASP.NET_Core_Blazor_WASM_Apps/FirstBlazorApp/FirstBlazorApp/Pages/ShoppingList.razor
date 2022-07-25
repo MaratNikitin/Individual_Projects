@@ -3,56 +3,72 @@
     Author: Marat Nikitin.
     When: July 2022.
     This is the Shopping List Blazor component allowing creating a shopping list using one-way
-        data binding.
+        data binding and input data validation.
 *@
 
 @page "/shoppinglist"
+@layout ShoppingListLayout
+
 @*@using FirstBlazorApp.Data*@ @*this line is commented-out as it's included in _Imports.razor*@
 <PageTitle>@title</PageTitle>
 <h3 class="text-center">Shopping List</h3>
-<label> Grocery Name: </label>
+
+<EditForm Model="@grocery" OnSubmit="AddGrocery">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <p>
+        <label>
+            Name:
+            <InputText @bind-Value="grocery.Name" class="form-control mb-3"/> 
+        </label>
+    </p>
+    <p>
+        <label>
+            Price:
+            <InputNumber @bind-Value="grocery.Price" class="form-control mb-3"/>
+        </label>
+    </p>
+    <button type="submit" class="btn btn-success mb-3"> Add Grocery </button>
+</EditForm>
+
+@*<label> Grocery Name: </label>
 <input placeholder="Grocery Name" @bind="groceryName" class="form-control mb-3"/>
 <label> Grocery Price: </label>
 <input placeholder="Grocery Price" @bind="groceryPrice" class="form-control mb-3"/>
-<button @onclick="AddGrocery" class="btn btn-success mb-3"> Add Grocery </button>
+<button @onclick="AddGrocery" class="btn btn-success mb-3"> Add Grocery </button>*@
 
-<table class="table table-sm table-striped table-bordered">
-    <tr>
-        <th> Name </th>
-        <th> Price </th>
-        <th> </th>
-    </tr>
-    @foreach(var grocery in groceries)
-    {
-        <Item GroceryItem="@grocery" OnGroceryPriceIncreased="OnGroceryPriceIncreased"/>
-    }
-</table>
+@if(groceries.Count != 0)
+{
+    <table class="table table-sm table-striped table-bordered">
+        <tr>
+            <th> Name </th>
+            <th> Price </th>
+            <th> </th>
+        </tr>
+        @foreach(var grocery in groceries)
+        {
+            <Item GroceryItem="@grocery" OnGroceryPriceIncreased="OnGroceryPriceIncreased"/>
+        }
+    </table>
+}
+
 
 @*<h3> Total = @groceries.Sum(grocery => grocery.Price) </h3>*@
 <h3> Total = @sum </h3>
 
 @code {
-    private float sum = 0;
+    private float sum;
     private string title = "Shopping List";
     private string groceryName = "";
     private float groceryPrice;
-
+    private Grocery grocery = new();
     private List<Grocery> groceries = new();
 
     private void AddGrocery()
     {
-        if(!string.IsNullOrWhiteSpace(groceryName) && (groceryPrice > 0))
-        {
-            groceries.Add(new Grocery
-                {
-                    Name = groceryName,
-                    Price = groceryPrice
-                });
-            //sum += groceryPrice;
-            groceryName = string.Empty;
-            groceryPrice = 0;
-            UpdateTotalAmount();
-        }
+        groceries.Add(grocery);
+        grocery = new();
+        UpdateTotalAmount();
     }
 
     public void UpdateTotalAmount()
