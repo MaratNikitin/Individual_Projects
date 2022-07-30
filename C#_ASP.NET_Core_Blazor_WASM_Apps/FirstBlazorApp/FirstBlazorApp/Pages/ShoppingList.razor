@@ -13,7 +13,7 @@
 <PageTitle>@title</PageTitle>
 <h3 class="text-center">Shopping List</h3>
 
-<EditForm Model="@grocery" OnSubmit="AddGrocery">
+<EditForm Model="@grocery" OnValidSubmit="AddGrocery">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <p>
@@ -57,10 +57,10 @@
 <h3> Total = @sum </h3>
 
 @code {
-    private float sum;
+    private decimal sum;
     private string title = "Shopping List";
     private string groceryName = "";
-    private float groceryPrice;
+    private decimal groceryPrice;
     private Grocery grocery = new();
     private List<Grocery> groceries = new();
 
@@ -68,7 +68,7 @@
     {
         groceries.Add(grocery);
         grocery = new();
-        UpdateTotalAmount();
+        UpdateTotalAmount(); 
     }
 
     public void UpdateTotalAmount()

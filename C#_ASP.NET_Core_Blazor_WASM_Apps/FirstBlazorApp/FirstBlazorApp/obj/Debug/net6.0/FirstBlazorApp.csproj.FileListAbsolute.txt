@@ -1628,3 +1628,4 @@ C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_
 C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_WASM_Apps\FirstBlazorApp\FirstBlazorApp\obj\Debug\net6.0\refint\FirstBlazorApp.dll
 C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_WASM_Apps\FirstBlazorApp\FirstBlazorApp\obj\Debug\net6.0\FirstBlazorApp.pdb
 C:\Users\marat\OneDrive\Desktop\SAIT_Individual_Projects\C#_ASP.NET_Core_Blazor_WASM_Apps\FirstBlazorApp\FirstBlazorApp\obj\Debug\net6.0\ref\FirstBlazorApp.dll
+C:\Users\maratn\Desktop\MN\Individual_Projects\C#_ASP.NET_Core_Blazor_WASM_Apps\FirstBlazorApp\FirstBlazorApp\obj\Debug\net6.0\scopedcss\Shared\ShoppingListLayout.razor.rz.scp.css

@@ -10,6 +10,6 @@ namespace FirstBlazorApp.Data
 
         [Required]
         [Range(1, 10000, ErrorMessage ="Valid Price Range is (1-10000)")]
-        public float Price { get; set; }
+        public decimal Price { get; set; }
     }
 }
