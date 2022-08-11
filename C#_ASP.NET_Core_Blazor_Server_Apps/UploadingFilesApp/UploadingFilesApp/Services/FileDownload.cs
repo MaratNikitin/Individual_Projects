@@ -1,15 +1,24 @@
 ﻿using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.JSInterop;
 
 namespace UploadingFilesApp.Services
 {
     public interface IFileDownload
     {
         Task<List<String>> GetUploadedFiles();
+        Task DownloadFile(string url);
     }
 
     public class FileDownload : IFileDownload
     {
         private IWebHostEnvironment _webHostEnvironment;
+        private readonly IJSRuntime _js;
+        public FileDownload(IWebHostEnvironment webHostEnvironment, IJSRuntime js)
+        {
+            _webHostEnvironment = webHostEnvironment;
+            _js = js;
+        }
+
         public async Task<List<string>> GetUploadedFiles()
         {
             var base64Urls = new List<string>();
@@ -32,6 +41,11 @@ namespace UploadingFilesApp.Services
                 }
             }
             return base64Urls;
+        }
+
+        public async Task DownloadFile(string url)
+        {
+            await _js.InvokeVoidAsync("downloadFile", url);
         }
 
         private string GetMimeTypeForFileExtension(string filePath)

@@ -48,7 +48,7 @@ namespace UploadingFilesApp.Services
             {
                 if (file.ContentType.Contains("pdf"))
                 {
-                    return "images/pdf_logo.png";
+                    return "~/images/pdf_logo.png";
                 }
             }
 
