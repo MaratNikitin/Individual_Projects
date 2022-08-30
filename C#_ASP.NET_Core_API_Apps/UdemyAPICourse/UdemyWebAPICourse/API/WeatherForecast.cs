@@ -1,5 +1,6 @@
 namespace API
 {
+    // this file created by default when a project is created
     public class WeatherForecast
     {
         public DateTime Date { get; set; }
