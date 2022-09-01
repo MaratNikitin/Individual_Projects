@@ -1,2 +1,2 @@
 # SAIT_Individual_Projects
-Marat's individual project.
+Marat's individual projects.
