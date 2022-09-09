@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using API.Models.Domain
+using API.Models.Domain;
 
 namespace API.Data
 {
