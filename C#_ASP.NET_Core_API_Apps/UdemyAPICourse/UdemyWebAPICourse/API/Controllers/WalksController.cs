@@ -49,26 +49,32 @@ namespace API.Controllers
         public async Task<IActionResult> AddWalkAsync(AddWalkRequest addWalkRequest)
         {
             // Request to Domain model
-            var walk = new Models.Domain.Walk()
-            {
-                Name = addWalkRequest.Name,
-                Length = addWalkRequest.Length,
-                RegionId = addWalkRequest.RegionId,
-                WalkDifficultyId = addWalkRequest.WalkDifficultyId
-            };
+
+            //var walk = new Models.Domain.Walk()
+            //{
+            //    Name = addWalkRequest.Name,
+            //    Length = addWalkRequest.Length,
+            //    RegionId = addWalkRequest.RegionId,
+            //    WalkDifficultyId = addWalkRequest.WalkDifficultyId
+            //};
+
+            var walk = mapper.Map<Models.Domain.Walk>(addWalkRequest);
 
             // Pass details to Repository
             walk = await walkRepository.AddAsync(walk);
 
             // Convert back to DTO
-            var walkDTO = new Models.DTO.Walk
-            {
-                Id = walk.Id,
-                Name = walk.Name,
-                Length = walk.Length,
-                RegionId = walk.RegionId,
-                WalkDifficultyId = walk.WalkDifficultyId
-            };
+
+            //var walkDTO = new Models.DTO.Walk
+            //{
+            //    Id = walk.Id,
+            //    Name = walk.Name,
+            //    Length = walk.Length,
+            //    RegionId = walk.RegionId,
+            //    WalkDifficultyId = walk.WalkDifficultyId
+            //};
+
+            var walkDTO = mapper.Map<Models.DTO.Walk>(walk);
 
             return CreatedAtAction(nameof(GetWalkAsync), new { id = walkDTO.Id }, walkDTO);
         }
@@ -100,14 +106,17 @@ namespace API.Controllers
         public async Task<IActionResult> UpdateWalkAsync([FromRoute] Guid id, [FromBody] UpdateWalkRequest updateWalkRequest)
         {
             // Convert DTO to Domain model
-            var walk = new Models.Domain.Walk
-            {
-                //Id = id,
-                Name = updateWalkRequest.Name,
-                Length = updateWalkRequest.Length,
-                RegionId = updateWalkRequest.RegionId,
-                WalkDifficultyId = updateWalkRequest.WalkDifficultyId
-            };
+
+            //var walk = new Models.Domain.Walk
+            //{
+            //    //Id = id,
+            //    Name = updateWalkRequest.Name,
+            //    Length = updateWalkRequest.Length,
+            //    RegionId = updateWalkRequest.RegionId,
+            //    WalkDifficultyId = updateWalkRequest.WalkDifficultyId
+            //};
+
+            var walk = mapper.Map<Models.Domain.Walk>(updateWalkRequest);
 
             // Update Walk using repository
             var updatedWalk = await walkRepository.UpdateAsync(id, walk);
@@ -119,14 +128,16 @@ namespace API.Controllers
             };
 
             // Convert Domain back to DTO
-            var updatedWalkDTO = new Models.DTO.UpdateWalkRequest
-            {
-                Name = updatedWalk.Name,
-                Length = updatedWalk.Length,
-                RegionId = updatedWalk.RegionId,
-                WalkDifficultyId = updatedWalk.WalkDifficultyId
-            };
 
+            //var updatedWalkDTO = new Models.DTO.UpdateWalkRequest
+            //{
+            //    Name = updatedWalk.Name,
+            //    Length = updatedWalk.Length,
+            //    RegionId = updatedWalk.RegionId,
+            //    WalkDifficultyId = updatedWalk.WalkDifficultyId
+            //};
+
+            var updatedWalkDTO = mapper.Map<UpdateWalkRequest>(updatedWalk);
 
             // Return Ok response
             return Ok(updatedWalkDTO);
