@@ -20,15 +20,19 @@ namespace WebAPILinkedInLearning.Controllers
 
         [HttpGet]
         [Route("/alt")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
+        public async Task<ActionResult<IEnumerable<Product>>> GetAllProductsAlt([FromQuery] QueryParameters queryParameters)
         {
-            var products = await _context.Products.ToListAsync();
-            return Ok(products);
+            IQueryable<Product> products = _context.Products;
+            products = products
+                .Skip(queryParameters.Size * (queryParameters.Page - 1))
+                .Take(queryParameters.Size);
+            var products2 = await _context.Products.ToListAsync();
+            return Ok(await products.ToListAsync());
         }
 
         [HttpGet]
         [Route("/")]
-        public async Task<IEnumerable<Product>> GetAllProductsAlt()
+        public async Task<IEnumerable<Product>> GetAllProducts()
         {
             return await _context.Products.ToListAsync();
         }
