@@ -20,9 +20,22 @@ namespace WebAPILinkedInLearning.Controllers
 
         [HttpGet]
         [Route("/alt")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetAllProductsAlt([FromQuery] QueryParameters queryParameters)
+        public async Task<ActionResult<IEnumerable<Product>>> GetAllProductsAlt([FromQuery] ProductQueryParameters queryParameters)
         {
             IQueryable<Product> products = _context.Products;
+
+            if (queryParameters.MinPrice != null)
+            {
+                products = products
+                    .Where(p => p.Price >= queryParameters.MinPrice.Value);
+            }
+
+            if (queryParameters.MaxPrice != null)
+            {
+                products = products
+                    .Where(p => p.Price <= queryParameters.MaxPrice.Value);
+            }
+
             products = products
                 .Skip(queryParameters.Size * (queryParameters.Page - 1))
                 .Take(queryParameters.Size);
