@@ -13,5 +13,19 @@
                 _size = Math.Min(_maxSize, value);
             } 
         }
+
+        public string SortBy { get; set; } = "Id";
+        private string _sortOrder = "asc";
+        public string SortOrder
+        {
+            get { return _sortOrder; }
+            set
+            {
+                if (value.ToLower() == "asc" || value.ToLower() == "desc")
+                {
+                    _sortOrder = value.ToLower();
+                }
+            } 
+        }
     }
 }
