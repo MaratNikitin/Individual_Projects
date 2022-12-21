@@ -22,6 +22,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+} else
+{
+    // Enforcing use of HTTPS instead of HTTP for Production environment
+    app.UseHsts(); 
 }
 
 app.UseHttpsRedirection();
