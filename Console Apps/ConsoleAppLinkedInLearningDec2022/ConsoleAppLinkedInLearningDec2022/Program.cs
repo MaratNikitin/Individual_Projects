@@ -35,10 +35,10 @@
 //Console.WriteLine($"{"Float Val", -15} {"Int Val", 10}");
 //Console.WriteLine($"{f1, -15} {i1, 10}");
 
-string str1 = "The quick brown fox jumps over the lazy dog";
-string str2 = "This is a string";
-string str3 = "THIS is a STRING";
-string[] str4 = { "one", "two", "three", "four" };
+//string str1 = "The quick brown fox jumps over the lazy dog";
+//string str2 = "This is a string";
+//string str3 = "THIS is a STRING";
+//string[] str4 = { "one", "two", "three", "four" };
 
 //// Length of a string 
 //Console.WriteLine(str1.Length);
@@ -78,4 +78,47 @@ string[] str4 = { "one", "two", "three", "four" };
 //string outString = str1.Replace("fox", "cat");
 //Console.WriteLine(outString);
 
- 
+
+// Coding challenge from the 'C# and .NET Essential Training' LinkedIn Learning course 
+using System.Collections.Concurrent;
+
+while(true)
+{
+    string inputString;
+    Console.WriteLine("Which date? (or 'exit')");
+    inputString = Console.ReadLine() ?? "";
+    DateTime inputDate;
+    DateTime todaysDate = DateTime.Today;
+
+    if(inputString == "exit")
+    {
+        Environment.Exit(0);
+    }
+
+    if (DateTime.TryParse(inputString, out inputDate))
+    {
+        int dateDifferenceInDays = (todaysDate - inputDate).Days;
+        switch (dateDifferenceInDays)
+        {
+            case 0:
+                Console.WriteLine("That day is today!");
+                break;
+            default:
+                if (dateDifferenceInDays > 0)
+                {
+                    Console.WriteLine($"That day went by {dateDifferenceInDays} days ago!");
+                }
+                else
+                {
+                    Console.WriteLine($"That day will be in {-dateDifferenceInDays} days!");
+                };
+                break;
+        }
+    }
+    else
+    {
+        Console.WriteLine("That doesn't seem to be a valid date");
+    }
+    Console.WriteLine();
+}
+
