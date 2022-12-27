@@ -78,47 +78,133 @@
 //string outString = str1.Replace("fox", "cat");
 //Console.WriteLine(outString);
 
+/******************************************************************************************************************************************************************/
 
-// Coding challenge from the 'C# and .NET Essential Training' LinkedIn Learning course 
-using System.Collections.Concurrent;
+// Coding challenge 1 from the 'C# and .NET Essential Training' LinkedIn Learning course 
+// A user is requested to enter a date in any valid format and then the app responds by showing how far is that entered date from the current date
 
-while(true)
+//using System.Collections.Concurrent;
+
+//while(true)
+//{
+//    string inputString;
+//    Console.WriteLine("Which date? (or 'exit')");
+//    inputString = Console.ReadLine() ?? "";
+//    DateTime inputDate;
+//    DateTime todaysDate = DateTime.Today;
+
+//    if(inputString == "exit")
+//    {
+//        Environment.Exit(0);
+//    }
+
+//    if (DateTime.TryParse(inputString, out inputDate))
+//    {
+//        int dateDifferenceInDays = (todaysDate - inputDate).Days;
+//        switch (dateDifferenceInDays)
+//        {
+//            case 0:
+//                Console.WriteLine("That day is today!");
+//                break;
+//            default:
+//                if (dateDifferenceInDays > 0)
+//                {
+//                    Console.WriteLine($"That day went by {dateDifferenceInDays} days ago!");
+//                }
+//                else
+//                {
+//                    Console.WriteLine($"That day will be in {-dateDifferenceInDays} days!");
+//                };
+//                break;
+//        }
+//    }
+//    else
+//    {
+//        Console.WriteLine("That doesn't seem to be a valid date");
+//    }
+//    Console.WriteLine();
+//}
+
+/******************************************************************************************************************************************************************/
+
+// Coding challenge 2 from the 'C# and .NET Essential Training' LinkedIn Learning course 
+// A folder contains various MS Office file. A txt file report is created showing statistics regarding those files.
+using System.Globalization;
+
+string currentDirectoryPath = Directory.GetCurrentDirectory();
+Console.WriteLine(currentDirectoryPath);
+string folderAnalyzedPath = @"C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\Console Apps\\ConsoleAppLinkedInLearningDec2022\\ConsoleAppLinkedInLearningDec2022\\FilesCollection";
+DirectoryInfo directoryInfo = new DirectoryInfo(folderAnalyzedPath);
+List<string> theFiles = new List<string>(Directory.EnumerateFiles(folderAnalyzedPath));
+
+// Counters for file numbers:
+int excelFilesNumber = 0;
+int wordFilesNumber = 0;
+int powerPointFilesNumber = 0;
+
+// File size counters:
+long excelFilesTotalSize = 0;
+long wordFilesTotalSize = 0;
+long powerPointFilesTotalSize = 0;
+
+int fileSequenceNumber = 0;
+
+// Collecting statistics
+foreach (string file in theFiles)
 {
-    string inputString;
-    Console.WriteLine("Which date? (or 'exit')");
-    inputString = Console.ReadLine() ?? "";
-    DateTime inputDate;
-    DateTime todaysDate = DateTime.Today;
+    
+    fileSequenceNumber++;
+    string lastFourChar = file.Substring(file.Length - 4);
+    FileInfo fi = new FileInfo(file);
 
-    if(inputString == "exit")
+    if (lastFourChar == "xlsx")
     {
-        Environment.Exit(0);
+        excelFilesNumber++;
+        excelFilesTotalSize += fi.Length;
+        //Console.WriteLine($"File number: {fileSequenceNumber}; file name: {file.Substring(file.Length - 6)}; file size: {fi.Length}" );
     }
-
-    if (DateTime.TryParse(inputString, out inputDate))
+    else if (lastFourChar == "docx")
     {
-        int dateDifferenceInDays = (todaysDate - inputDate).Days;
-        switch (dateDifferenceInDays)
-        {
-            case 0:
-                Console.WriteLine("That day is today!");
-                break;
-            default:
-                if (dateDifferenceInDays > 0)
-                {
-                    Console.WriteLine($"That day went by {dateDifferenceInDays} days ago!");
-                }
-                else
-                {
-                    Console.WriteLine($"That day will be in {-dateDifferenceInDays} days!");
-                };
-                break;
-        }
+        wordFilesNumber++;
+        wordFilesTotalSize += fi.Length;
+        //Console.WriteLine($"File number: {fileSequenceNumber}; file name: {file.Substring(file.Length - 6)}; file size: {fi.Length}");
+    }
+    else if (lastFourChar == "pptx")
+    {
+        powerPointFilesNumber++;
+        powerPointFilesTotalSize += fi.Length;
+        //Console.WriteLine($"File number: {fileSequenceNumber}; file name: {file.Substring(file.Length - 6)}; file size: {fi.Length}");
     }
     else
     {
-        Console.WriteLine("That doesn't seem to be a valid date");
+        //Console.WriteLine($"File number: {fileSequenceNumber}; file name: {file.Substring(file.Length - 6)}; file size: {fi.Length}");
+        continue;
     }
-    Console.WriteLine();
 }
 
+int totalNumberOfMSOfficeFiles = excelFilesNumber + wordFilesNumber + powerPointFilesNumber;
+long totalMSOfficeFilesSize = excelFilesTotalSize + wordFilesTotalSize + powerPointFilesTotalSize;
+
+const string resultsFileName = "results.txt";
+
+if (File.Exists(resultsFileName))
+{
+    File.Delete(resultsFileName);
+}
+
+// Writing the results into the new 'results.txt' file located in the \bin\debug\net6.0 folder
+
+File.WriteAllText(resultsFileName, "~~~~ Results ~~~~");
+using (StreamWriter sw = File.AppendText(resultsFileName))
+{
+    sw.WriteLine();
+    sw.WriteLine($"Total Files: {totalNumberOfMSOfficeFiles}");
+    sw.WriteLine($"Excel Count: {excelFilesNumber}");
+    sw.WriteLine($"Word Count: {wordFilesNumber}");
+    sw.WriteLine($"PowerPoint Count: {powerPointFilesNumber}");
+    sw.WriteLine($"----");
+    sw.WriteLine($"Total Size: {totalMSOfficeFilesSize.ToString("N0")}");
+    sw.WriteLine($"Excel Size: {excelFilesTotalSize.ToString("N0")}");
+    sw.WriteLine($"Word Size: {wordFilesTotalSize.ToString("N0")}");
+    sw.WriteLine($"PowerPoint Size: {powerPointFilesTotalSize.ToString("N0")}");
+}
