@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>  
+    <script type = "text/babel">
+      // let robot = "🤖"; 
+      // let cowboy = "🤠";
+      // let smileyFace = "😊";
+      // let name = "React";
+      // let ul = React.createElement(
+      //   "ul", 
+      //   {style:{color:"blue"}}, 
+      //   React.createElement("li", null, "Monday"),
+      //   React.createElement("li", null, "Tuesday"),
+      //   React.createElement("li", null, "Wednesday"),
+      //   React.createElement("li", null, "Thursday"),
+      //   React.createElement("li", null, "Friday"),
+      //   React.createElement("li", null, "Saturday"),
+      //   React.createElement("li", null, "Sunday"));
+      
+      // ReactDOM.render(
+      //   <ul>
+      //     <li>{robot}</li>
+      //     <li>{cowboy}</li>
+      //     <li>{smileyFace}</li>
+      //     <li>{name.toUpperCase()}</li>
+      //     <li>{name.length}</li>
+      //   </ul>,
+      //   document.getElementById("root")
+      // );
+
+      function Header(props){
+        console.log(props);
+        return (
+          <header>
+            <h1> {props.name}'s Kitchen</h1>
+          </header>
+        );
+      }
+
+      function Main(props){
+        return (
+          <section>
+            <img 
+              height={200}
+              src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Chef Preparing Vegetable Dish on Tree Slab"
+            />
+            <p> We serve the most {props.adjective} food around </p>
+            <ul>
+              {props.dishes.map((dish) => (
+                <li key={dish.id}>{dish.title}</li>
+                ))}
+            </ul>
+          </section>
+        )
+      }
+
+      function Footer(props){
+        return(
+          <footer>
+            <p>Copyright {props.year}</p>
+          </footer>
+        )
+      }
+
+      const dishes = [
+        "Black Bean Soup",
+        "Macaroni and Cheese",
+        "Salmon and Potatoes",
+        "Pizza"
+      ];
+
+      const dishObjects = dishes.map((dish, i) =>({
+        id: i,
+        title: dish
+      }));
+
+      ReactDOM.render(
+        <React.Fragment>
+          <Header name="Marat"/>
+          <Main adjective = "amazing" dishes = {dishObjects}/>
+          <Footer year={new Date().getFullYear()}/>
+        </React.Fragment>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
