@@ -1,2 +1,2 @@
-# SAIT_Individual_Projects
+# Individual_Projects
 Marat's individual projects - from SAIT's OOSD program and later works.
