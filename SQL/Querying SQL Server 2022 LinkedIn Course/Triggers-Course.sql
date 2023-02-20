@@ -91,3 +91,116 @@ DELETE FROM dbo.AccountsPayable
 WHERE AccountID = 1;
 GO
 
+CREATE TABLE dbo.Colors (
+	ColorID INT IDENTITY PRIMARY KEY,
+	ColorName NVARCHAR(20)
+);
+GO
+
+CREATE OR ALTER TRIGGER DBO.TR_ColorsInsertUpdateDelete
+ON dbo.Colors
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+	SELECT * FROM inserted;
+	SELECT * FROM deleted;
+END;
+GO
+
+INSERT INTO dbo.Colors (ColorName)
+	VALUES ('Red'), ('Green'), ('Blue')
+;
+
+UPDATE dbo.Colors
+SET ColorName = 'Yellow'
+WHERE ColorID = 3;
+
+DELETE FROM dbo.Colors
+WHERE ColorID = 2;
+
+SELECT * FROM Colors
+GO
+
+CREATE TABLE dbo.NumberParity (
+	RowID INT IDENTITY PRIMARY KEY,
+	MyNumber INT,
+	Parity NVARCHAR(20)
+);
+GO
+
+CREATE OR ALTER TRIGGER DBO.tr_NumberParityInsert
+ON dbo.NumberParity
+AFTER INSERT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	UPDATE dbo.NumberParity
+		SET Parity = 'Even Number'
+		FROM inserted
+		WHERE dbo.NumberParity.RowID = inserted.RowID
+			AND inserted.MyNumber % 2 = 0;
+
+	UPDATE dbo.NumberParity
+	SET Parity = 'Odd Number'
+	FROM inserted
+	WHERE dbo.NumberParity.RowID = inserted.RowID
+		AND inserted.MyNumber % 2 <> 0;
+END;
+GO
+
+INSERT INTO dbo.NumberParity (MyNumber)
+	VALUES (12), (23), (16), (22), (43)
+;
+
+SELECT * FROM dbo.NumberParity
+
+INSERT INTO dbo.NumberParity (MyNumber, Parity)
+	VALUES (99, 'Even Number')
+;
+GO
+
+CREATE TABLE dbo.Vendor (
+	VendorID INT IDENTITY PRIMARY KEY,
+	VendorName NVARCHAR(50),
+);
+GO
+
+CREATE TABLE dbo.VendorArchive (
+	VendorID INT PRIMARY KEY,
+	VendorName NVARCHAR(50),
+	DateArchived DATETIME2
+);
+GO
+
+INSERT INTO dbo.Vendor (VendorName)
+	VALUES ('KinetEco');
+GO
+
+SELECT * FROM dbo.Vendor;
+GO
+
+SELECT * FROM dbo.VendorArchive;
+GO
+
+CREATE OR ALTER TRIGGER DBO.tr_VendorDelete
+ON dbo.Vendor
+AFTER DELETE
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	INSERT INTO VendorArchive (VendorID, VendorName)
+		SELECT deleted.VendorId, deleted.VendorName
+		FROM deleted;
+
+	UPDATE VendorArchive
+		SET DateArchived = GETDATE()
+		FROM deleted
+		WHERE VendorArchive.VendorID = deleted.VendorID
+
+END;
+GO
+
+DELETE FROM dbo.Vendor
+	WHERE VendorID = 1;
+
