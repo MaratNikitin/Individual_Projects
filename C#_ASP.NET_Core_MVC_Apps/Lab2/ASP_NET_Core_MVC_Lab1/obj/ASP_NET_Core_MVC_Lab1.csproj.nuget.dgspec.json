@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj": {}
+    "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj": {
+    "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj",
+        "projectUniqueName": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj",
         "projectName": "ASP_NET_Core_MVC_Lab1",
-        "projectPath": "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj",
-        "packagesPath": "C:\\Users\\14039\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\ASP_NET_Core_MVC_Lab1\\obj\\",
+        "projectPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\ASP_NET_Core_MVC_Lab1\\ASP_NET_Core_MVC_Lab1.csproj",
+        "packagesPath": "C:\\Users\\maratn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\ASP_NET_Core_MVC_Lab1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\14039\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maratn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +22,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Progress\\Telerik UI for Blazor\\nupkg": {},
+          "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\Blazor\\20.2.0.43\\NuGetPackages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj": {
-                "projectPath": "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj"
+              "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj": {
+                "projectPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj"
               }
             }
           }
@@ -63,7 +65,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,21 +78,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj": {
+    "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj",
+        "projectUniqueName": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj",
         "projectName": "DbEntities_Class_Library",
-        "projectPath": "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj",
-        "packagesPath": "C:\\Users\\14039\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\14039\\source\\repos\\ASP_NET_Core_MVC_Lab2\\DbEntities_Class_Library\\obj\\",
+        "projectPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\DbEntities_Class_Library\\DbEntities_Class_Library.csproj",
+        "packagesPath": "C:\\Users\\maratn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\Lab2\\DbEntities_Class_Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\14039\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\maratn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,6 +100,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Progress\\Telerik UI for Blazor\\nupkg": {},
+          "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\Blazor\\20.2.0.43\\NuGetPackages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -136,7 +141,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -145,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

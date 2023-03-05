@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7KyIEysGlDGbs+IV8G3vu0JDDRkxOvOY4oMpKLus9I9O85ciNMWbWEmEToyt6coPWQnaIx5agrmQOvLPMzfuqw==",
+  "dgSpecHash": "CcVOGshHHMkN+u+CupXZENyhy9twqm866zIdZ63ruwNLR4vCFgpQpjD+djqpE20dNzMisoIYKNjp/HGXu4P/Qg==",
   "success": true,
   "projectFilePath": "C:\\Users\\maratn\\Desktop\\MN\\Individual_Projects\\C#_ASP.NET_Core_MVC_Apps\\InAndOut\\InAndOut\\InAndOut.csproj",
   "expectedPackageFiles": [
@@ -130,11 +130,7 @@
     "C:\\Users\\maratn\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\maratn\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\maratn\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\maratn\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\maratn\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
-    "C:\\Users\\maratn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\maratn\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\maratn\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\maratn\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=GHMDEVICEGLPEWO;Initial Catalog=Assignment2023;Integrated Security=True;Trusted_Connection=True;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -DataAnnotations

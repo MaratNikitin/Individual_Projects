@@ -1,0 +1,49 @@
+﻿@* 
+* This ASP.NET Core 7 MVC web app allows displaying items grouped by categories coming from a SQL Server database 
+    using Entity Framework Core; full range of CRUD operations is enabled.
+*  This file creates a page where the app's user can create and save a new item.
+* Author: Marat Nikitin
+* Assignment
+* When: March 2023
+*@
+
+@model DBEntities.Models.Item
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center pb-3">Create a New Item</h1>
+
+<h4>Item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label">Category</label>
+                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="ItemName" class="control-label">Item's Name</label>
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemValue" class="control-label">Item's Value, $</label>
+                <input asp-for="ItemValue" class="form-control" />
+                <span asp-validation-for="ItemValue" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <input type="submit" value="Create" class="btn btn-primary px-4" />
+                <a asp-action="Index" class="mx-3">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

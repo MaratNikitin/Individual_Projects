@@ -1,0 +1,46 @@
+﻿@* 
+* This ASP.NET Core 7 MVC web app allows displaying items grouped by categories coming from a SQL Server database 
+    using Entity Framework Core; full range of CRUD operations is enabled.
+*  This file creates a page where the app's user can see details of a selected item.
+* Author: Marat Nikitin
+* Assignment
+* When: March 2023
+*@
+
+@model DBEntities.Models.Item
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center pb-3">Details of the Item</h1>
+
+<div>
+    <h4>Selected Item</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Item Name 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+        <dt class = "col-sm-2 py-4">
+            Item Value
+        </dt>
+        <dd class = "col-sm-10 py-4">
+            @Html.DisplayFor(model => model.ItemValue)
+        </dd>
+        <dt class = "col-sm-2">
+            Category
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+    </dl>
+</div>
+<div class="py-4">
+    <a asp-action="Edit" asp-route-id="@Model?.ItemId">Edit</a> 
+    <span class="mx-2">|</span>
+    <a asp-action="Index">Back to List</a>
+</div>

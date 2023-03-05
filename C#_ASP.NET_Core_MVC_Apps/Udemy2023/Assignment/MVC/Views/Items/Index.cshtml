@@ -1,0 +1,132 @@
+﻿@* 
+* This ASP.NET Core 7 MVC web app allows displaying items grouped by categories coming from a SQL Server database 
+    using Entity Framework Core; full range of CRUD operations is enabled.
+*  This is the main page of the application, where items grouped by categories are displayed with their total values.
+* Author: Marat Nikitin
+* Assignment
+* When: March 2023
+*@
+
+
+@model IEnumerable<DBEntities.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center pb-3">All Items by Categories</h1>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+    <div class="col-4 py-3">
+        <a asp-action="Create" class="btn btn-success" title="Add a New Item"><i class="bi bi-plus-circle"></i> Add a New Item</a>
+    </div>
+</div>
+
+<table class="table">
+    <tbody>
+        <tr >
+            <th>
+                <b>Category</b> | Item
+            </th>
+            <th>
+                <b>Category Total</b> | Item Value
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </tbody>
+</table>
+
+@foreach (KeyValuePair<string, decimal> dictionaryRecord in ViewBag.CategoriesWithTotals)
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <b>@dictionaryRecord.Key</b>
+                </td>
+                <td>
+                    <b>@dictionaryRecord.Value.ToString("C0")</b>
+                </td>
+                <td></td>
+            </tr>
+            @foreach (var item in Model.Where(i => i.Category.CategoryName == dictionaryRecord.Key))
+            {
+                <tr>
+                    <td class="ps-5">
+                        @Html.DisplayFor(modelItem => item.ItemName)
+                    </td>
+                    <td class="ps-5">
+                        @Html.DisplayFor(modelItem => item.ItemValue)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ItemId" title="Edit the Item"> <i class="bi bi-pencil-square"></i></a>
+                        <span class="mx-2">|</span>
+                        <a asp-action="Details" asp-route-id="@item.ItemId" title="See the Item's Details"><i class="bi bi-eye"></i></a>
+                        <span class="mx-2">|</span>
+                        <a asp-action="Delete" asp-route-id="@item.ItemId" title="Delete the Item"><i class="bi bi-trash3"></i></a>
+                    </td>
+                </tr>
+            }       
+        </tbody>
+    </table>
+}
+
+<table class="table">
+    <tbody>
+        <tr>
+            <td>
+                <b>TOTAL</b>
+            </td>
+            <td>
+                <b>@ViewBag.GrandTotal.ToString("C0")</b>
+            </td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+
+@*<h4>All items together</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Item Name
+            </th>
+            <th>
+                Item Value
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a>
+                <span class="mx-2">|</span>
+                <a asp-action="Details" asp-route-id="@item.ItemId">Details</a>
+                <span class="mx-2">|</span>
+                <a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>
+            </td>
+        </tr>
+}      
+    </tbody>
+</table>*@
