@@ -57,7 +57,7 @@ namespace HotelListingAPI.Controllers
         {
             if (id != country.CountryId)
             {
-                return BadRequest();
+                return BadRequest("Invalid CountryId was used in this Put request.");
             }
 
             _context.Entry(country).State = EntityState.Modified;
