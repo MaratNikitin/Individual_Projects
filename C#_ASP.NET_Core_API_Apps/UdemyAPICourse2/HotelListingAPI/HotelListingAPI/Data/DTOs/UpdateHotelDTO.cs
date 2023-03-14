@@ -1,6 +1,6 @@
 ﻿namespace HotelListingAPI.Data.DTOs
 {
-    public class GetHotelsDTO : BaseHotelDTO
+    public class UpdateHotelDTO : BaseHotelDTO
     {
         public int HotelId { get; set; }
     }

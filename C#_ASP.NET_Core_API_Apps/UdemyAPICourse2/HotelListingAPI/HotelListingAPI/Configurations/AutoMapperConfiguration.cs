@@ -11,12 +11,16 @@ namespace HotelListingAPI.Configurations
         /// </summary>
         public AutoMapperConfiguration()
         {
+            // Country entity
             CreateMap<Country, CreateCountryDTO>().ReverseMap();
             CreateMap<Country, GetCountriesDTO>().ReverseMap();
             CreateMap<Country, GetCountryDetailsDTO>().ReverseMap();
             CreateMap<Country, UpdateCountryDTO>().ReverseMap();
 
+            // Hotel entity
             CreateMap<Hotel, GetHotelsDTO>().ReverseMap();
+            CreateMap<Hotel, CreateHotelDTO>().ReverseMap();
+            CreateMap<Hotel, UpdateHotelDTO>().ReverseMap();
         }
     }
 }
