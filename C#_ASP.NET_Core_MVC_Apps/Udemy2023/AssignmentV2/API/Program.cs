@@ -1,3 +1,4 @@
+using API.Configurations;
 using API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,17 @@ builder.Services.AddDbContext<Assignment2023Context>(options => options.UseSqlSe
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Enable CORS
+builder.Services.AddCors(option => {
+    option.AddPolicy("AllowAll",
+        b => b.AllowAnyHeader().
+            AllowAnyOrigin().
+            AllowAnyMethod());
+});
+
+// Registering AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperConfigurations));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,6 +38,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Enable CORS
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
