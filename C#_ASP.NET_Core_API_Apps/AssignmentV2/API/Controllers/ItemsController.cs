@@ -9,6 +9,15 @@ using API.Models;
 using AutoMapper;
 using API.Models.DTOs;
 
+/*
+ * This ASP.NET7 Web API app allows sharing items coming from a SQL Server database 
+    using Entity Framework Core; full range of CRUD operations for Items is enabled.
+ *  This is the only controller file of the application.
+ * Author: Marat Nikitin
+ * Assignment
+ * When: March 2023
+ */
+
 namespace API.Controllers
 {
     [Route("api/[controller]")]
