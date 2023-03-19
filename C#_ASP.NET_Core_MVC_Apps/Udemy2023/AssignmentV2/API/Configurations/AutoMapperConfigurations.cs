@@ -12,7 +12,8 @@ namespace API.Configurations
         /// </summary>
         public AutoMapperConfigurations()
         {
-            CreateMap<Item, GetCreateItemDTO>().ReverseMap();
+            CreateMap<Item, GetItemDTO>().ReverseMap();
+            CreateMap<Item, CreateItemDTO>().ReverseMap();
             CreateMap<Item, UpdateItemDTO>().ReverseMap();
         }
     }

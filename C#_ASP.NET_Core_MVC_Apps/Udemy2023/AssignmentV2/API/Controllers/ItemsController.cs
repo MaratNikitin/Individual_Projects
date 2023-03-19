@@ -26,23 +26,23 @@ namespace API.Controllers
 
         // GET: api/Items
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GetCreateItemDTO>>> GetItems()
+        public async Task<ActionResult<IEnumerable<GetItemDTO>>> GetItems()
         {
             if (_context.Items == null)
             {
                 return NotFound();
             }
 
-            var itemsList = await _context.Items.ToListAsync();
+            var itemsList = await _context.Items.OrderBy(i => i.CategoryId).ToListAsync();
 
-            List<GetCreateItemDTO> itemDTOlist = _mapper.Map<List<GetCreateItemDTO>>(itemsList);
+            List<GetItemDTO> itemDTOlist = _mapper.Map<List<GetItemDTO>>(itemsList);
 
             return Ok(itemDTOlist);
         }
 
         // GET: api/Items/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<GetCreateItemDTO>> GetItem(int id)
+        public async Task<ActionResult<CreateItemDTO>> GetItem(int id)
         {
             if (_context.Items == null)
             {
@@ -56,7 +56,7 @@ namespace API.Controllers
                 return NotFound();
             }
 
-            var itemDTO = _mapper.Map<GetCreateItemDTO>(item);
+            var itemDTO = _mapper.Map<CreateItemDTO>(item);
 
             return Ok(itemDTO);
         }
@@ -106,7 +106,7 @@ namespace API.Controllers
         // POST: api/Items
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Item>> PostItem(GetCreateItemDTO createItemDTO)
+        public async Task<ActionResult<Item>> PostItem(CreateItemDTO createItemDTO)
         {
             var item = _mapper.Map<Item>(createItemDTO);
 
@@ -140,7 +140,7 @@ namespace API.Controllers
             _context.Items.Remove(item);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         private bool ItemExists(int id)
