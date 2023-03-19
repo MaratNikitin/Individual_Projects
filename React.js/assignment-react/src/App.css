@@ -46,3 +46,7 @@
   text-align: center;
   bottom: 0;
 }
+
+.fixed-column-width {
+  width: 130px;
+}

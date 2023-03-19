@@ -11,6 +11,14 @@ export class Items extends Component {
       categoryId: 0,
       itemName: '',
       itemValue: '',
+      electronicsTotal: 0,
+      clothingTotal: 0,
+      kitchenTotal: 0,
+      grandTotal: 0,
+      itemsDictionary: {},
+      electronicsItems: [],
+      clothingItems: [],
+      kitchenItems: [],
     }
   }
 
@@ -19,6 +27,32 @@ export class Items extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({ items: data })
+
+        let grandTotalCalculated = 0
+        let electronicsTotalCalculated = 0
+        let clothingTotalCalculated = 0
+        let kitchenTotalCalculated = 0
+
+        data.forEach((item) => {
+          grandTotalCalculated += item.itemValue
+
+          if (item.categoryId === 1) {
+            electronicsTotalCalculated += item.itemValue
+          }
+
+          if (item.categoryId === 2) {
+            clothingTotalCalculated += item.itemValue
+          }
+
+          if (item.categoryId === 3) {
+            kitchenTotalCalculated += item.itemValue
+          }
+        })
+
+        this.setState({ grandTotal: grandTotalCalculated })
+        this.setState({ electronicsTotal: electronicsTotalCalculated })
+        this.setState({ clothingTotal: clothingTotalCalculated })
+        this.setState({ kitchenTotal: kitchenTotalCalculated })
       })
   }
 
@@ -94,7 +128,17 @@ export class Items extends Component {
   }
 
   render() {
-    const { items, modalTitle, categoryId, itemName, itemValue } = this.state
+    const {
+      items,
+      modalTitle,
+      categoryId,
+      itemName,
+      itemValue,
+      grandTotal,
+      electronicsTotal,
+      kitchenTotal,
+      clothingTotal,
+    } = this.state
     return (
       <React.Fragment>
         <div className="container">
@@ -127,7 +171,8 @@ export class Items extends Component {
               </button>
             </div>
           </div>
-          <table className="table table-striped">
+
+          <table className="table">
             <thead>
               <tr>
                 <th>Category | Item</th>
@@ -135,31 +180,154 @@ export class Items extends Component {
                 <th>Actions</th>
               </tr>
             </thead>
+          </table>
+
+          <table className="table">
             <tbody>
-              {items.map((item) => (
-                <tr key={item.categoryId}>
-                  <td>{item.itemName}</td>
-                  <td>{item.itemValue}</td>
-                  <td>
-                    <button
-                      className="btn"
-                      type="button"
-                      onClick={() => this.deleteItemClick(item.itemId)}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        className="bi bi-trash3"
-                        viewBox="0 0 18 18"
+              <tr>
+                <td className="">
+                  <b>Electronics</b>
+                </td>
+                <td>
+                  <b>${electronicsTotal}</b>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table className="table">
+            <tbody>
+              {items
+                .filter((i) => i.categoryId === 1)
+                .map((item) => (
+                  <tr key={item.itemId}>
+                    <td className="ps-5">{item.itemName}</td>
+                    <td className="ps-5">${item.itemValue}</td>
+                    <td>
+                      <button
+                        className="btn"
+                        type="button"
+                        onClick={() => this.deleteItemClick(item.itemId)}
                       >
-                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-              ))}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          className="bi bi-trash3"
+                          viewBox="0 0 18 18"
+                        >
+                          <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>
+                  <b>Clothing</b>
+                </td>
+                <td>
+                  <b>${clothingTotal}</b>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table className="table">
+            <tbody>
+              {items
+                .filter((i) => i.categoryId === 2)
+                .map((item) => (
+                  <tr key={item.itemId}>
+                    <td className="ps-5">{item.itemName}</td>
+                    <td className="ps-5">${item.itemValue}</td>
+                    <td>
+                      <button
+                        className="btn"
+                        type="button"
+                        onClick={() => this.deleteItemClick(item.itemId)}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          className="bi bi-trash3"
+                          viewBox="0 0 18 18"
+                        >
+                          <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>
+                  <b>Kitchen</b>
+                </td>
+                <td>
+                  <b>${kitchenTotal}</b>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table className="table">
+            <tbody>
+              {items
+                .filter((i) => i.categoryId === 3)
+                .map((item) => (
+                  <tr key={item.itemId}>
+                    <td className="ps-5">{item.itemName}</td>
+                    <td className="ps-5">${item.itemValue}</td>
+                    <td>
+                      <button
+                        className="btn"
+                        type="button"
+                        onClick={() => this.deleteItemClick(item.itemId)}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          className="bi bi-trash3"
+                          viewBox="0 0 18 18"
+                        >
+                          <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+
+          <table className="table">
+            <tbody>
+              <tr>
+                <td>
+                  <b>TOTAL</b>
+                </td>
+                <td>
+                  <b>${grandTotal}</b>
+                </td>
+                <td></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -185,19 +353,29 @@ export class Items extends Component {
 
               <div className="modal-body">
                 <div className="input-group mb-3">
-                  <span className="input-group-text">Category ID</span>
-                  <input
-                    type="number"
+                  <span className="input-group-text fixed-column-width">
+                    Category
+                  </span>
+                  <select
                     className="form-control"
                     value={categoryId}
                     onChange={this.changeCategory}
-                  ></input>
+                  >
+                    <option value="0">
+                      <span>Please select a category by clicking here...</span>
+                    </option>
+                    <option value="1">Electronics</option>
+                    <option value="2">Clothing</option>
+                    <option value="3">Kitchen</option>
+                  </select>
                 </div>
               </div>
 
               <div className="modal-body">
                 <div className="input-group mb-3">
-                  <span className="input-group-text">Item Name</span>
+                  <span className="input-group-text fixed-column-width">
+                    Item Name
+                  </span>
                   <input
                     type="text"
                     className="form-control"
@@ -209,7 +387,9 @@ export class Items extends Component {
 
               <div className="modal-body">
                 <div className="input-group mb-3">
-                  <span className="input-group-text">Item Value, $</span>
+                  <span className="input-group-text fixed-column-width">
+                    Item Value, $
+                  </span>
                   <input
                     type="number"
                     className="form-control"
