@@ -18,6 +18,11 @@ static string ReverseAWord(string input)
 
 static string ReverseEachWordInASentence(string input)
 {
+    if (String.IsNullOrEmpty(input))
+    {
+        return "";
+    }
+
     string [] words = input.Split(" ");
     StringBuilder sentenceWithReversedWords = new();
     foreach (string word in words)
