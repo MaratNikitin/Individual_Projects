@@ -29,9 +29,10 @@ static string ReverseEachWordInASentence(string input)
     {
         sentenceWithReversedWords.Append(ReverseAWord(word) + " ");
     }
+    sentenceWithReversedWords.Length--;
     return sentenceWithReversedWords.ToString();
 }
 
 string testSentence = "Today is July 13th 2023";
-Console.WriteLine($"Original sentence: {testSentence}");
-Console.WriteLine($"Sentence with each word reversed: {ReverseEachWordInASentence(testSentence)}");
+Console.WriteLine($"Original sentence: {testSentence}.");
+Console.WriteLine($"Sentence with each word reversed: {ReverseEachWordInASentence(testSentence)}.");
