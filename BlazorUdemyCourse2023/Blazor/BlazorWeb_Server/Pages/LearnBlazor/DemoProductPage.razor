@@ -6,20 +6,7 @@
     <div class="row">
         @foreach (var product in Products)
         {
-            <div class="col-5 bg-light border m-1">
-                <h4 class="text-secondary"> Product - @product.Id</h4>
-                <div> Name - @product.Name</div>
-                <div> Show Properties: <input type="checkbox" @bind=@product.IsActive/></div>
-
-                @if (product.IsActive)
-                {
-                    foreach (var property in product.ProductProperties)
-                    {
-                        <div class="mb-3">@property.Key - @property.Value</div>
-                    }
-                }
-                <EditDeleteButton  IsActive=@product.IsActive/>
-            </div>
+            <IndividualProduct ProductParam=@product/>
         }
     </div>
     

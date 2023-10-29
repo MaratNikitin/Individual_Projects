@@ -1,0 +1,19 @@
+﻿<div class="col-5 bg-light border m-1">
+    <h4 class="text-secondary"> Product - @ProductParam.Id</h4>
+    <div> Name - @ProductParam.Name</div>
+    <div> Show Properties: <input type="checkbox" @bind=@ProductParam.IsActive /></div>
+
+    @if (ProductParam.IsActive)
+    {
+        foreach (var property in ProductParam.ProductProperties)
+        {
+            <div class="mb-3">@property.Key - @property.Value</div>
+        }
+    }
+    <EditDeleteButton IsActive=@ProductParam.IsActive />
+</div>
+
+@code {
+    [Parameter]
+    public DemoProduct ProductParam { get; set; }
+}
