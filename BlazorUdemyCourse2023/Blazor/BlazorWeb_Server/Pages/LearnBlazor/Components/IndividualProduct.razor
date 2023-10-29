@@ -1,4 +1,4 @@
-﻿<div class="col-5 bg-light border m-1">
+﻿<div class="col-5 bg-light border m-2 p-2" @onclick="CardClickHandler">
     <h4 class="text-secondary"> Product - @ProductParam.Id</h4>
     <div class="my-3"><input type="checkbox" @onchange="FavouriteUpdated"/> Add to Favourites </div>
     <div> Name - @ProductParam.Name</div>
@@ -21,8 +21,16 @@
     [Parameter]
     public EventCallback<bool> OnFavouriteUpdated { get; set; }
 
+    [Parameter]
+    public EventCallback<string> OnIndividualProductClicked { get; set; }
+
     private async Task FavouriteUpdated(ChangeEventArgs e)
     {
         await OnFavouriteUpdated.InvokeAsync((bool)e.Value);
+    }
+
+    private async Task CardClickHandler(MouseEventArgs args)
+    {
+        await OnIndividualProductClicked.InvokeAsync(ProductParam.Name);
     }
 }

@@ -2,13 +2,17 @@
 
 <h2 class="text-primary">Demo Product</h2>
 
-<p> Favourites Total: @SelectedFavouriteCount</p>
+<p> Favourites Total: @selectedFavouriteCount</p>
+<p> Last Selected Product: @clickedProductName</p>
 
 <div class="border p-2 mt-2" style="background-color:azure">
     <div class="row">
         @foreach (var product in Products)
         {
-            <IndividualProduct ProductParam=@product OnFavouriteUpdated="FavouriteCountUpdateHandler"/>
+            <IndividualProduct 
+                ProductParam=@product 
+                OnFavouriteUpdated="FavouriteCountUpdateHandler"
+                OnIndividualProductClicked="ClickedProductHandler" />
         }
     </div>
     
@@ -16,7 +20,9 @@
 
 
 @code {
-    private int SelectedFavouriteCount { get; set; } = 0;
+    private int selectedFavouriteCount { get; set; } = 0;
+
+    private string clickedProductName { get; set; } = "";
 
     DemoProduct product = new()
         {
@@ -85,12 +91,17 @@
     {
         if (isSelected)
         {
-            SelectedFavouriteCount++;
+            selectedFavouriteCount++;
         }
         else
         {
-            SelectedFavouriteCount--;
+            selectedFavouriteCount--;
         }
+    }
+
+    protected void ClickedProductHandler(string productName)
+    {
+        clickedProductName = productName;
     }
 }
 
