@@ -2,11 +2,13 @@
 
 <h2 class="text-primary">Demo Product</h2>
 
+<p> Favourites Total: @SelectedFavouriteCount</p>
+
 <div class="border p-2 mt-2" style="background-color:azure">
     <div class="row">
         @foreach (var product in Products)
         {
-            <IndividualProduct ProductParam=@product/>
+            <IndividualProduct ProductParam=@product OnFavouriteUpdated="FavouriteCountUpdateHandler"/>
         }
     </div>
     
@@ -14,6 +16,8 @@
 
 
 @code {
+    private int SelectedFavouriteCount { get; set; } = 0;
+
     DemoProduct product = new()
         {
             Id = 1,
@@ -75,6 +79,18 @@
                 new DemoProductProperties{ Id = 3, Key = "Colour", Value = "Pink"}
             }
             });
+    }
+
+    protected void FavouriteCountUpdateHandler(bool isSelected)
+    {
+        if (isSelected)
+        {
+            SelectedFavouriteCount++;
+        }
+        else
+        {
+            SelectedFavouriteCount--;
+        }
     }
 }
 

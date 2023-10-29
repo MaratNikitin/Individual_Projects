@@ -1,5 +1,6 @@
 ﻿<div class="col-5 bg-light border m-1">
     <h4 class="text-secondary"> Product - @ProductParam.Id</h4>
+    <div class="my-3"><input type="checkbox" @onchange="FavouriteUpdated"/> Add to Favourites </div>
     <div> Name - @ProductParam.Name</div>
     <div> Show Properties: <input type="checkbox" @bind=@ProductParam.IsActive /></div>
 
@@ -16,4 +17,12 @@
 @code {
     [Parameter]
     public DemoProduct ProductParam { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnFavouriteUpdated { get; set; }
+
+    private async Task FavouriteUpdated(ChangeEventArgs e)
+    {
+        await OnFavouriteUpdated.InvokeAsync((bool)e.Value);
+    }
 }
