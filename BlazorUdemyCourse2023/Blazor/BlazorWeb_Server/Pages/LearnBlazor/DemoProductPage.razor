@@ -1,0 +1,95 @@
+﻿@page "/learnBlazor/demoproduct"
+
+<h2 class="text-primary">Demo Product</h2>
+
+<div class="border p-2 mt-2" style="background-color:azure">
+    <div class="row">
+        @foreach (var product in Products)
+        {
+            <div class="col-5 bg-light border m-1">
+                <h4 class="text-secondary"> Product - @product.Id</h4>
+                <div> Name - @product.Name</div>
+                <div> Show Properties: <input type="checkbox" @bind=@product.IsActive/></div>
+
+                @if (product.IsActive)
+                {
+                    foreach (var property in product.ProductProperties)
+                    {
+                        <div class="mb-3">@property.Key - @property.Value</div>
+                    }
+                }
+
+                <button class="btn btn-danger" style="width:100px">Delete</button>
+                <button class="btn btn-success" style="width:100px">Edit</button>
+            </div>
+        }
+    </div>
+    
+</div>
+
+
+@code {
+    DemoProduct product = new()
+        {
+            Id = 1,
+            Name = "Rose Candle",
+            IsActive = true,
+            Price = 10.99,
+            ProductProperties = new List<DemoProductProperties>()
+            {
+                new DemoProductProperties {Id = 1, Key = "Colour", Value = "Black"},
+                new DemoProductProperties {Id = 1, Key = "Flavour", Value = "Rose"},
+                new DemoProductProperties {Id = 1, Key = "Size", Value = "20 oz"},
+            }
+        };
+
+    private string selectedProperty = "";
+
+    List<DemoProduct> Products = new();
+
+    protected override void OnInitialized()
+    {
+        Products.Add(new()
+            {
+                Id = 1,
+                Name = "Midnight Blaze",
+                IsActive = false,
+                Price = 10.99,
+                ProductProperties = new()
+            {
+                new DemoProductProperties{ Id = 1, Key = "Flavour", Value = "Rose"},
+                new DemoProductProperties{ Id = 2, Key = "Size", Value = "20 oz"},
+                new DemoProductProperties{ Id = 3, Key = "Colour", Value = "Purple"}
+            }
+            });
+
+        Products.Add(new()
+            {
+                Id = 2,
+                Name = "Blossom Lily",
+                IsActive = true,
+                Price = 13.99,
+                ProductProperties = new()
+            {
+                new DemoProductProperties{ Id = 1, Key = "Flavour", Value = "Lily"},
+                new DemoProductProperties{ Id = 2, Key = "Size", Value = "18 oz"},
+                new DemoProductProperties{ Id = 3, Key = "Colour", Value = "White"}
+            }
+            });
+
+        Products.Add(new()
+            {
+                Id = 3,
+                Name = "Jasmine Tea",
+                IsActive = false,
+                Price = 11.99,
+                ProductProperties = new()
+            {
+                new DemoProductProperties{ Id = 1, Key = "Flavour", Value = "Jasmine"},
+                new DemoProductProperties{ Id = 2, Key = "Size", Value = "15 oz"},
+                new DemoProductProperties{ Id = 3, Key = "Colour", Value = "Pink"}
+            }
+            });
+    }
+}
+

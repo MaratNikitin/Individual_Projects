@@ -1,26 +1,61 @@
 ﻿@page "/learnBlazor/bindprop"
 
-<h3>Product</h3>
-Name: @product.Name <br />
-Active: @product.IsActive<br />
-Price: @product.Price<br />
-This Product is: @(product.IsActive ? "Active" : "Inactive")<br /><br />
-Property Selected: @selectedProperty <br />
+<h2 class="text-success">Individual Product</h2>
+<div class="row">
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Product Playground</h3> <hr />
+        <div>Active: <input type="checkbox" @bind="@product.IsActive" /><br /></div>
+        <div>Price: <input type="number" @bind-value="@product.Price" @bind-value:event="oninput" /> <br /></div>
+        <div>
+            Product Properties:
+            <select @bind="selectedProperty">
+                @foreach (var prop in product.ProductProperties)
+                {
+                    <option value="@prop.Key"> @prop.Key </option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="col-6 border p-3">
+        <h3 class="text-primary">Product Summary</h3> <hr />
+        Name: @product.Name <br />
+        Active: @product.IsActive<br />
+        Price: @product.Price<br />
+        This Product is: @(product.IsActive ? "Active" : "Inactive")<br /><br />
+        Property Selected: @selectedProperty <br />
 
-@if (!string.IsNullOrWhiteSpace(selectedProperty))
+        @if (!string.IsNullOrWhiteSpace(selectedProperty))
+        {
+            <span>Property Value: @product.ProductProperties.FirstOrDefault(x => x.Key == selectedProperty)?.Value</span>
+        }
+    </div>
+    <br />  
+</div>
+
+<h2 class="text-success mt-5">Product Table</h2>
+
+@foreach(var product in Products)
 {
-    <p>Property Value: @product.ProductProperties.FirstOrDefault(x => x.Key == selectedProperty)?.Value</p>
+    <div class="row">
+        <div class="col-5 py-2">
+            <input type="text" @bind-value=@product.Name @bind-value:event="oninput"/>
+        </div>
+        <div class="col-5 py-2">
+            <input type="number" @bind-value=@product.Price @bind-value:event="oninput" />
+        </div>
+        <div class="col-2 py-2">
+            <input type="checkbox" @bind="@product.IsActive"/>
+        </div>
+    </div>
 }
 
-Active: <input type="checkbox" @bind="@product.IsActive"/><br />
-Price: <input type="number" @bind-value="@product.Price" @bind-value:event="oninput"/> <br />
-Product Properties: 
-<select @bind="selectedProperty">
-    @foreach(var prop in product.ProductProperties)
-    {
-        <option value="@prop.Key"> @prop.Key </option>
-    }
-</select>
+<h2 class="text-success mt-5">Product Summary</h2>
+
+@foreach (var product in Products)
+{
+    <div class="mt-1">@($"{product.Name} [{product.Price}] is {(product.IsActive ? "Active" : "InActive")}")</div>
+}
+
 @code {
     DemoProduct product = new()
         {
@@ -38,4 +73,36 @@ Product Properties:
 
     private string selectedProperty = "";
 
+    List<DemoProduct> Products = new();
+
+    protected override void OnInitialized()
+    {
+        Products.Add(new()
+        {
+            Id = 1,
+            Name = "Midnight Blaze",
+            IsActive = false,
+            Price = 10.99,
+            ProductProperties = new()
+            {
+                new DemoProductProperties{ Id = 1, Key = "Flavour", Value = "Rose"},
+                new DemoProductProperties{ Id = 2, Key = "Size", Value = "20 oz"},
+                new DemoProductProperties{ Id = 3, Key = "Colour", Value = "Purple"}
+            }
+        });
+
+        Products.Add(new()
+            {
+                Id = 2,
+                Name = "Blossom Lily",
+                IsActive = true,
+                Price = 13.99,
+                ProductProperties = new()
+            {
+                new DemoProductProperties{ Id = 1, Key = "Flavour", Value = "Lily"},
+                new DemoProductProperties{ Id = 2, Key = "Size", Value = "18 oz"},
+                new DemoProductProperties{ Id = 3, Key = "Colour", Value = "White"}
+            }
+            });
+    }
 }
