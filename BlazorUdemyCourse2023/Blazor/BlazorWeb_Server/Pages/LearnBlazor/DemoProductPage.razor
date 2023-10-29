@@ -18,9 +18,7 @@
                         <div class="mb-3">@property.Key - @property.Value</div>
                     }
                 }
-
-                <button class="btn btn-danger" style="width:100px">Delete</button>
-                <button class="btn btn-success" style="width:100px">Edit</button>
+                <EditDeleteButton  IsActive=@product.IsActive/>
             </div>
         }
     </div>
