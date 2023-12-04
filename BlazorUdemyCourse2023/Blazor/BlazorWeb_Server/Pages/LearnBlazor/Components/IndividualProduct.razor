@@ -2,6 +2,12 @@
     <h4 class="text-secondary"> Product - @ProductParam.Id</h4>
     <div class="my-3"><input type="checkbox" @onchange="FavouriteUpdated"/> Add to Favourites </div>
     <div> Name - @ProductParam.Name</div>
+
+    <DemoProductChild Title="RF from Parent - ">
+        <FirstFragment>#1</FirstFragment>
+        <SecondFragment>#2</SecondFragment>
+    </DemoProductChild>
+
     <div> Show Properties: <input type="checkbox" @bind=@ProductParam.IsActive /></div>
 
     @if (ProductParam.IsActive)
