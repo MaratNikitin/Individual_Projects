@@ -15,4 +15,12 @@
     {
         EventType.Add("Child - OnInitialized is called");
     }
+
+    [Parameter]
+    public int CountValue { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        EventType.Add("Child - OnParametersSet is called");
+    }
 }
