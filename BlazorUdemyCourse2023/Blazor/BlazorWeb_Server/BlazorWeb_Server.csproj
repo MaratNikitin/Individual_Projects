@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Blazor_Business\Blazor_Business.csproj" />
     <ProjectReference Include="..\Blazor_DataAccess\Blazor_DataAccess.csproj" />
     <ProjectReference Include="..\Blazor_Models\Blazor_Models.csproj" />
   </ItemGroup>

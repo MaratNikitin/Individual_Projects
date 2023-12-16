@@ -36,6 +36,8 @@ namespace Blazor_Business.Repositories
             // Convert from CategoryDTO to Category using AutoMapper:
             Category category = _mapper.Map<CategoryDTO,Category>(objDTO);
 
+            category.CreatedDate = DateTime.Now;
+
             _dbContext.Categories.Add(category);
             _dbContext.SaveChanges();
 
@@ -52,22 +54,59 @@ namespace Blazor_Business.Repositories
 
         public int Delete(int categoryId)
         {
-            throw new NotImplementedException();
+            var category= _dbContext.Categories.FirstOrDefault(c => c.Id == categoryId);
+
+            if(category != null)
+            {
+                _dbContext.Remove(category);
+                return _dbContext.SaveChanges();
+            }
+
+            return 0;            
         }
 
-        public CategoryDTO Get(int id)
+        public CategoryDTO Get(int categoryId)
         {
-            throw new NotImplementedException();
+            var category = _dbContext.Categories.FirstOrDefault(c => c.Id == categoryId);
+
+            if (category != null)
+            {
+                return _mapper.Map<Category, CategoryDTO>(category);
+            }
+
+            return new CategoryDTO();
         }
 
         public IEnumerable<CategoryDTO> GetAll()
         {
-            throw new NotImplementedException();
+            //List<Category> categoriesList = _dbContext.Categories.ToList();
+
+            //List<CategoryDTO> categoryDTOsList = new List<CategoryDTO>();
+
+            //foreach (var category in categoriesList)
+            //{
+            //    var categoryDTO = _mapper.Map<Category, CategoryDTO>(category);
+            //    categoryDTOsList.Add(categoryDTO);
+            //}
+
+            //return categoryDTOsList;
+
+            return _mapper.Map<IEnumerable<Category>, IEnumerable<CategoryDTO>>(_dbContext.Categories);
         }
 
         public CategoryDTO Update(CategoryDTO objDTO)
         {
-            throw new NotImplementedException();
+            var category = _dbContext.Categories.FirstOrDefault(c => c.Id == objDTO.Id);
+
+            if (category != null)
+            {
+                category.Name = objDTO.Name;
+                _dbContext.Categories.Update(category);
+                _dbContext.SaveChanges();
+                return _mapper.Map<Category,CategoryDTO>(category);
+            }
+
+            return objDTO;
         }
     }
 }
