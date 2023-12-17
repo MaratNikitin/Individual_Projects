@@ -1,0 +1,81 @@
+﻿@page "/category/create"
+@page "/category/edit/{id:int}"
+
+@inject ICategoryRepository _categoryRepository;
+@inject NavigationManager _navigationManager;
+
+<div class="row my-2">
+    <h3 class="card-title text-primary mb-3 ml-3">@Title Category</h3>
+    <div class="col-10">
+        @if (IsLoading)
+        {
+            // loading GIF is displayed here.
+            <div class="text-center">
+                <img src="/images/loading.gif" / width="200px" height="200px">
+            </div>
+        }
+        else
+        {
+            <EditForm Model="Category" OnValidSubmit="UpsertCategory">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="form-group">
+                    <label>Name</label>
+                    <InputText @bind-Value="Category.Name" class="form-control"></InputText>
+                    <ValidationMessage For="()=>Category.Name" />
+                </div>
+                <div class="form-group my-2">
+                    <button class="btn btn-primary" style="width:180px">@Title</button>
+                    <NavLink href="/category" class="btn btn-secondary" style="width:180px">Back To Categories</NavLink>
+                </div>
+            </EditForm>
+        }
+    </div>
+</div>
+
+<h3>Category Upsert</h3>
+
+@code {
+    [Parameter]
+    public int Id { get; set; } = 0;
+
+    private CategoryDTO Category { get; set; } = new();
+    private string Title { get; set; } = "Create";
+    public bool IsLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if(Id == 0)
+        {
+            // Create a new category request is here.
+            IsLoading = false;
+        }
+        else
+        {
+            // It's an update request
+            Title = "Update";
+            await Task.Run(LoadCategory);
+        }
+
+    }
+
+    private void LoadCategory()
+    {
+        Category = _categoryRepository.Get(Id);
+        IsLoading = false;
+    }
+
+    private void UpsertCategory()
+    {
+        if(Category.Id == 0)
+        {
+            _categoryRepository.Create(Category);
+        }
+        else
+        {
+            _categoryRepository.Update(Category);
+        }
+
+        _navigationManager.NavigateTo("/category");
+    }
+}
