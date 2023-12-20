@@ -27,3 +27,11 @@ window.ShowSweetAlert = (type, message) => {
         )
     }
 }
+
+function ShowDeleteConfirmationModal() {
+    $('#delete-confirmation-modal').modal('show');
+}
+
+function HideDeleteConfirmationModal() {
+    $('#delete-confirmation-modal').modal('hide');
+}
