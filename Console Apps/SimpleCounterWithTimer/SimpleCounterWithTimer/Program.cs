@@ -1,14 +1,14 @@
 ﻿using System.Diagnostics;
 using System.Numerics;
 
-int inputNumber = 123456789;
+int inputNumber = 1000;
 var stopWatch = new Stopwatch();
 
 Console.WriteLine($"Started execution ...");
 
-stopWatch.Start();
-
 BigInteger cumulativeSum = 0;
+
+stopWatch.Start();
 
 for (int i = 0; i < inputNumber+1; i++)
 {
