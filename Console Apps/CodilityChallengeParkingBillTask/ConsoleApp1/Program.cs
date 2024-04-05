@@ -2,12 +2,12 @@
 const int FIRST_HOUR_FEE = 3;
 const int FOLLOWING_HOUR_FEE = 4;
 
-int CalculateParkingFee(string Entered, string Left)
+int CalculateParkingFee(string E, string L)
 {
     DateTime startTime = new DateTime();
     DateTime endTime = new DateTime();
-    startTime = DateTime.ParseExact(Entered, "H:m", null);
-    endTime = DateTime.ParseExact(Left, "H:m", null);
+    startTime = DateTime.ParseExact(E, "H:m", null);
+    endTime = DateTime.ParseExact(L, "H:m", null);
     int parkingFee = ENTRY_FEE + FIRST_HOUR_FEE;
     var timeDifference = endTime - startTime;
     parkingFee += timeDifference.Hours * FOLLOWING_HOUR_FEE;
