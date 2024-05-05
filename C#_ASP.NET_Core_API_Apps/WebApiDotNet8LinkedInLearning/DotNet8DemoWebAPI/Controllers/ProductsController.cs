@@ -36,5 +36,12 @@ namespace DotNet8DemoWebAPI.Controllers
 
             return Ok(product);
         }
+
+        [HttpGet("available")]
+        public async Task<ActionResult> GetAvailableProducts()
+        {
+            var products = await _shopDbContext.Products.Where(x => x.IsAvailable == true).ToListAsync();
+            return Ok(products);
+        }
     }
 }
