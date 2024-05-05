@@ -1,5 +1,6 @@
 using DotNet8DemoWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
+#nullable disable
 
 var builder = WebApplication.CreateBuilder(args);
 

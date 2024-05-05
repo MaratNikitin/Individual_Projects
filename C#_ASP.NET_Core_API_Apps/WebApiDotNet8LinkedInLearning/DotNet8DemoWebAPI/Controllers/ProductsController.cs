@@ -43,5 +43,57 @@ namespace DotNet8DemoWebAPI.Controllers
             var products = await _shopDbContext.Products.Where(x => x.IsAvailable == true).ToListAsync();
             return Ok(products);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> AddProduct(Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            
+            _shopDbContext.Products.Add(product);
+            await _shopDbContext.SaveChangesAsync();
+
+            return CreatedAtAction(
+                    nameof(GetProduct), 
+                    new {id = product.Id}, 
+                    product
+                );
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateProduct(int id, [FromBody]Product product)
+        {
+            if (id != product.Id)
+            {
+                return BadRequest();
+            }
+
+            try 
+            {
+                _shopDbContext.Entry(product).State = EntityState.Modified;
+                await _shopDbContext.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException) 
+            {
+                if (!_shopDbContext.Products.Any(p => p.Id == id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+
+
+            return NoContent();
+        }
     }
 }
