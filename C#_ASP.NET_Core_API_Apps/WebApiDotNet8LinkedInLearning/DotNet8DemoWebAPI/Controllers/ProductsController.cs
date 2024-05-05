@@ -91,9 +91,24 @@ namespace DotNet8DemoWebAPI.Controllers
                 throw;
             }
 
-
-
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteProduct(int id)
+        {
+            var product = await _shopDbContext.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            _shopDbContext.Products.Remove(product);
+            await _shopDbContext.SaveChangesAsync();
+
+            return Ok(product);
+        }
+
     }
 }
