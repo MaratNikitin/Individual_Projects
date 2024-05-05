@@ -110,5 +110,28 @@ namespace DotNet8DemoWebAPI.Controllers
             return Ok(product);
         }
 
+        [HttpPost("Delete")]
+        public async Task<ActionResult> DeleteMultiple([FromQuery] int[] ids)
+        {
+            var products = new List<Product>();
+
+            foreach (var id in ids)
+            {
+                var product = await _shopDbContext.Products.FindAsync(id);
+
+                if (product == null)
+                {
+                    return NotFound();
+                }
+
+                products.Add(product);
+            }
+
+            _shopDbContext.Products.RemoveRange(products);
+            await _shopDbContext.SaveChangesAsync();
+
+            return Ok(products);
+        }
+
     }
 }
