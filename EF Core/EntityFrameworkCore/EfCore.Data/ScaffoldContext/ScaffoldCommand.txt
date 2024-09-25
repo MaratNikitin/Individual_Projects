@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext 'Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FootballLeague_EfCore;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;' Microsoft.EntityFrameworkCore.SqlServer -ContextDir ScaffoldContext -OutputDir ScaffoldModels -Force
