@@ -1,5 +1,6 @@
 ﻿using EfCore.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,11 @@ public class FootballLeagueDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog = FootballLeague_EfCore; Encrypt=False;");
+        optionsBuilder
+            .UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog = FootballLeague_EfCore; Encrypt=False;")
+            .LogTo(Console.WriteLine, LogLevel.Information)
+            .EnableSensitiveDataLogging()
+            .EnableDetailedErrors();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
