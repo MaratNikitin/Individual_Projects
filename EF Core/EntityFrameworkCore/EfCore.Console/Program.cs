@@ -5,7 +5,8 @@ using var context = new FootballLeagueDbContext();
 
 //await GetAllTeamsAsync();
 //await GetOneTeamAsync();
-await GetAllTeamsFilteredAsync();
+//await GetAllTeamsFilteredAsync();
+await GetAllTeamsQuerySyntaxAsync();
 
 async Task GetAllTeamsFilteredAsync()
 {
@@ -13,6 +14,35 @@ async Task GetAllTeamsFilteredAsync()
     Console.WriteLine("Filtered Teams:");
 
     foreach (var team in teamsFiltered)
+    {
+        Console.WriteLine(team.TeamName);
+    }
+
+    Console.WriteLine("Enter search term:");
+    var searchTerm = Console.ReadLine();
+
+    var partialMatches = await context.Teams.Where(q => q.TeamName.Contains(searchTerm)).ToListAsync();
+
+    foreach(var partialMatch in partialMatches)
+    {
+        Console.WriteLine(partialMatch.TeamName);
+    }
+
+}
+
+async Task GetAllTeamsQuerySyntaxAsync()
+{
+    Console.WriteLine("Enter search term:");
+    var searchTerm = Console.ReadLine();
+
+    var partialMatches = await context.Teams.Where(q => q.TeamName.Contains(searchTerm)).ToListAsync();
+
+    var teams = await (from team in context.Teams
+                       where team.TeamName.Contains(searchTerm)
+                       select team)
+                       .ToListAsync();
+
+    foreach (var team in teams)
     {
         Console.WriteLine(team.TeamName);
     }
